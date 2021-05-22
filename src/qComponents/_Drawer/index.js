@@ -1,14 +1,19 @@
 const React = require("react");
 
-const {SwipeableDrawer} = require("@material-ui/core");
+const {SwipeableDrawer, Button} = require("@material-ui/core");
 const useStyles = require("./styles");
 
 module.exports = function swipeableDrawer({
     children,
     drawerState,
     setDrawerState,
+    ...props
 }) {
     const classes = useStyles();
+    const makeDrawerContent = () => (
+        <div className={classes.drawerContainer}>{children}</div>
+    );
+
     return (
         <SwipeableDrawer
             anchor="left"
@@ -18,9 +23,10 @@ module.exports = function swipeableDrawer({
             disableBackdropTransition
             disableDiscovery
             disableSwipeToOpen
-            transitionDuration={{enter: 400, exit: 400}}
+            transitionDuration={{appear: 500, enter: 500, exit: 500}}
+            {...props}
         >
-            <div className={classes.drawerContainer}>{children}</div>
+            {makeDrawerContent()}
         </SwipeableDrawer>
     );
 };
