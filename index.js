@@ -1,6 +1,5 @@
 //qniverse components
-exports._NavBar = require("./src/qComponents/_NavBar");
-exports._Drawer = require("./src/qComponents/_Drawer");
+exports._NavBarWithDrawer = require("./src/qComponents/_NavBarWithDrawer");
 exports._CardVehicle = require("./src/qComponents/_CardVehicle");
 exports._QWrapper = require("./src/qComponents/_QWrapper");
 
