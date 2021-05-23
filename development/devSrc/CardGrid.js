@@ -1,7 +1,7 @@
 const React = require("react");
 const {
     _CardVehicle,
-    mui: {Grid},
+    Grid
 } = require("../../index");
 
 module.exports = function CardGrid() {

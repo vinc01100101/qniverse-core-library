@@ -11,7 +11,7 @@ const {Menu} = require("@material-ui/icons");
 
 const useStyles = require("./styles");
 
-module.exports = function navBar({logoSrc, drawerContent}) {
+module.exports = function navBarWithDrawer({logoSrc, drawerContent}) {
     const classes = useStyles();
     const [drawerState, setDrawerState] = React.useState(false);
 

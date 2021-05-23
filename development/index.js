@@ -5,7 +5,7 @@ const {
     _QWrapper,
     _NavBarWithDrawer,
     automart,
-    mui: {Button, List, ListItem, Typography, Grid},
+    Button, List, ListItem, Typography, Grid
 } = require("../index");
 
 const CardGrid = require("./devSrc/CardGrid");

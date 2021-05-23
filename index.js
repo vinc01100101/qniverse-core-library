@@ -1,13 +1,24 @@
 //qniverse components
-exports._NavBarWithDrawer = require("./src/qComponents/_NavBarWithDrawer");
-exports._CardVehicle = require("./src/qComponents/_CardVehicle");
-exports._QWrapper = require("./src/qComponents/_QWrapper");
+const _NavBarWithDrawer = require("./src/qComponents/_NavBarWithDrawer");
+const _CardVehicle = require("./src/qComponents/_CardVehicle");
+const _QWrapper = require("./src/qComponents/_QWrapper");
 
 //themes
-exports.automart = require("./src/themes/automart");
-exports.motomart = require("./src/themes/motomart");
-exports.sellmycar = require("./src/themes/sellmycar");
+const automart = require("./src/themes/automart");
+const motomart = require("./src/themes/motomart");
+const sellmycar = require("./src/themes/sellmycar");
 
 //material-ui components
-exports.mui = require("@material-ui/core");
-exports.muiStyles = require("@material-ui/core/styles");
+const mui = require("@material-ui/core");
+const muiStyles = require("@material-ui/core/styles");
+
+module.exports = {
+    _NavBarWithDrawer,
+    _CardVehicle,
+    _QWrapper,
+    automart,
+    motomart,
+    sellmycar,
+    ...mui,
+    ...muiStyles,
+};
