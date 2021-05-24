@@ -53,7 +53,7 @@ As well as the [Material-UI style modules](https://material-ui.com/styles/basics
 import {ThemeProvider, createMuiTheme} from "@qniverse/core";
 ```
 
-Current versions are only meant to be used with the [NextJS](https://nextjs.org/) framework.
+Current versions are only compatible with the [NextJS](https://nextjs.org/) framework.
 (We will remove this dependency in the future.)
 
 Inside the `_QWrapper` module are the [CssBaseLine](https://material-ui.com/components/css-baseline/) and [ThemeProvider](https://material-ui.com/styles/api/#themeprovider) which sets the app automatically. Just pass the config in the `_QWrapper` and use it to wrap the app components.
