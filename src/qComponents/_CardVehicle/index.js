@@ -23,6 +23,9 @@ const {
     initializeClock,
 } = require("../../utils/formatData");
 
+//package config
+const config = require("../../utils/config");
+
 module.exports = function cardVehicle({
     imageUrl,
     title,
@@ -33,14 +36,15 @@ module.exports = function cardVehicle({
     warehouseLocation,
     expiredAt,
     buyNowPrice,
-    NextImage,
 }) {
+    const ImageElement = config.imageElement;
+
     const classes = useStyles();
     return (
         <Card className={classes.root}>
             <CardActionArea className={classes.mainCardActions}>
                 <div className={classes.mediaContainer}>
-                    <NextImage
+                    <ImageElement
                         layout="responsive"
                         width={160}
                         height={120}

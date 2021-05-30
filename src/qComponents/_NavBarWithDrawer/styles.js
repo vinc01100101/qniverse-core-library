@@ -25,4 +25,27 @@ module.exports = makeStyles((theme) => ({
         width: "300px",
         padding: "20px",
     },
+    footerList: {
+        background: theme.palette.primary.main,
+    },
+    anchor: {
+        textDecoration: "none",
+        color: "black",
+    },
+    logo: {
+        width: "100%",
+    },
+
+    logoContainer: {
+        width: "100%",
+        background: theme.palette.primary.main,
+    },
+    copyRight: {
+        color: theme.palette.primary.contrastText,
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "14px",
+        lineHeight: "18px",
+        opacity: "0.5",
+    },
 }));

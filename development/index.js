@@ -5,36 +5,53 @@ const {
     _QWrapper,
     _NavBarWithDrawer,
     automart,
-    Button, List, ListItem, Typography, Grid
+    config,
+    Button,
+    List,
+    ListItem,
+    Typography,
+    Grid,
 } = require("../index");
+
+//IIFE (Immediately Invoked Function Expression)
+(() => {
+    config.theme = automart;
+    config.companyLogoSrc = "dist/Automart_Logo.svg";
+    config.links = {
+        ...config.links,
+        Home: ["/"],
+        FAQs: ["http://automart.ph/blog/frequently-asked-questions", true],
+        Blog: ["http://automart.ph/blog", true],
+        Reviews: ["http://automart.ph/reviews", true],
+        ["Contact Us"]: ["http://automart.ph/contact-us", true],
+        ["About Us"]: ["http://automart.ph/page/about-us", true],
+    };
+    config.drawerList = ["FAQs", "Contact Us", "Blog"];
+})();
 
 const CardGrid = require("./devSrc/CardGrid");
 function App() {
-    const config = {
-        theme: automart,
-    };
-    const drawerContent = (
-        <List>
-            <ListItem>
-                <Typography>
-                    <a href="tel:+63963 188 2087">Call us: +63963 188 2087</a>
-                </Typography>
-            </ListItem>
-        </List>
-    );
+    const drawerContent = "Optional Component Here.";
 
     return (
         <>
-            <_QWrapper config={config}>
-                <_NavBarWithDrawer
-                    drawerContent={drawerContent}
-                    logoSrc="dist/Automart_Logo.svg"
-                />
+            <_QWrapper>
+                <_NavBarWithDrawer drawerContent={drawerContent} />
 
-                <h1>Hello From REACT!!</h1>
+                <h1>Hello From REACT</h1>
+                <Button color="primary">Sample Button 1</Button>
+                <br />
+                <br />
                 <Button variant="contained" color="primary">
-                    Button
+                    Sample Button 2 "contained"
                 </Button>
+                <br />
+                <br />
+                <Button variant="outlined" color="primary">
+                    Sample Button 3 "outlined"
+                </Button>
+                <br />
+                <br />
                 <CardGrid />
             </_QWrapper>
         </>

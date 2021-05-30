@@ -18,13 +18,5 @@ module.exports = {
             contrastText: "#fff",
         },
     },
-    typography: {
-        price: {
-            fontFamily: '"Courier Prime"',
-            fontSize: "1.25rem",
-            fontWeight: 400,
-            color: "#fabd09",
-            lineHeight: "1.6",
-        },
-    },
+    typography: {},
 };

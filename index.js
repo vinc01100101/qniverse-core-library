@@ -6,7 +6,10 @@ const _QWrapper = require("./src/qComponents/_QWrapper");
 //themes
 const automart = require("./src/themes/automart");
 const motomart = require("./src/themes/motomart");
-const sellmycar = require("./src/themes/sellmycar");
+const sellMyCar = require("./src/themes/sellMyCar");
+
+//utils
+const config = require("./src/utils/config");
 
 //material-ui components
 const mui = require("@material-ui/core");
@@ -18,7 +21,8 @@ module.exports = {
     _QWrapper,
     automart,
     motomart,
-    sellmycar,
+    sellMyCar,
+    config,
     ...mui,
     ...muiStyles,
 };
