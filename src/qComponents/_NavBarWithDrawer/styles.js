@@ -24,13 +24,13 @@ module.exports = makeStyles((theme) => ({
         background: "white",
         width: "300px",
         padding: "20px",
+        "& a": {
+            textDecoration: "none",
+            color: "black",
+        },
     },
     footerList: {
         background: theme.palette.primary.main,
-    },
-    anchor: {
-        textDecoration: "none",
-        color: "black",
     },
     logo: {
         width: "100%",
@@ -47,5 +47,19 @@ module.exports = makeStyles((theme) => ({
         fontSize: "14px",
         lineHeight: "18px",
         opacity: "0.5",
+    },
+    advertise: {
+        background: theme.palette.secondary.main,
+        position: "fixed",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: 38,
+        width: "100%",
+        zIndex: 1,
+        "& a": {
+            textDecoration: "none",
+            color: theme.palette.secondary.contrastText,
+        },
     },
 }));

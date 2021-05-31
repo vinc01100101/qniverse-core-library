@@ -4,6 +4,7 @@ const ReactDOM = require("react-dom");
 const {
     _QWrapper,
     _NavBarWithDrawer,
+    _Footer,
     automart,
     config,
     Button,
@@ -23,10 +24,24 @@ const {
         FAQs: ["http://automart.ph/blog/frequently-asked-questions", true],
         Blog: ["http://automart.ph/blog", true],
         Reviews: ["http://automart.ph/reviews", true],
-        ["Contact Us"]: ["http://automart.ph/contact-us", true],
-        ["About Us"]: ["http://automart.ph/page/about-us", true],
+        "Contact Us": ["http://automart.ph/contact-us", true],
+        "About Us": ["http://automart.ph/page/about-us", true],
+        "Login or Signup": ["https://automart.ph/login", true],
     };
     config.drawerList = ["FAQs", "Contact Us", "Blog"];
+    config.footerList = [
+        "FAQs",
+        "Contact Us",
+        "Blog",
+        "Reviews",
+        "Contact Us",
+        "About Us",
+        "Login or Signup",
+    ];
+    config.advertise = {
+        text: "Selling your car? Pabenta? Pasalo? Go to Sell-My-Car.",
+        link: "http://automart.ph/",
+    };
 })();
 
 const CardGrid = require("./devSrc/CardGrid");
@@ -53,6 +68,7 @@ function App() {
                 <br />
                 <br />
                 <CardGrid />
+                <_Footer />
             </_QWrapper>
         </>
     );

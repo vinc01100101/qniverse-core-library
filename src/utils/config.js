@@ -14,6 +14,7 @@ const defaults = {
 
     navList: ["Home"],
     drawerList: ["Home"],
+    footerList: [],
     anchorElement: (props) => <a {...props} />,
     imageElement: (props) => <img {...props} />,
 };

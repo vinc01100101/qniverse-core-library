@@ -17,6 +17,12 @@ module.exports = {
             dark: "#42743d",
             contrastText: "#fff",
         },
+        info: {
+            light: "#ffb566",
+            main: "#ff932c",
+            dark: "#d67711",
+            contrastText: "#fff",
+        },
     },
     typography: {},
 };

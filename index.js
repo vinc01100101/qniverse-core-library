@@ -1,5 +1,6 @@
 //qniverse components
 const _NavBarWithDrawer = require("./src/qComponents/_NavBarWithDrawer");
+const _Footer = require("./src/qComponents/_Footer");
 const _CardVehicle = require("./src/qComponents/_CardVehicle");
 const _QWrapper = require("./src/qComponents/_QWrapper");
 
@@ -17,6 +18,7 @@ const muiStyles = require("@material-ui/core/styles");
 
 module.exports = {
     _NavBarWithDrawer,
+    _Footer,
     _CardVehicle,
     _QWrapper,
     automart,

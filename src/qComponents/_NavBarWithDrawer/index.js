@@ -14,6 +14,7 @@ const {
 } = require("@material-ui/core");
 const {Menu} = require("@material-ui/icons");
 
+//styles
 const useStyles = require("./styles");
 //package config
 const config = require("../../utils/config");
@@ -34,7 +35,6 @@ module.exports = function navBarWithDrawer({drawerContent}) {
         [config.links.linkedIn, linkedIn, "Linked In"],
     ];
     const AnchorElement = config.anchorElement;
-    console.log(config.links);
 
     const classes = useStyles();
     const [drawerState, setDrawerState] = React.useState(false);
@@ -56,7 +56,10 @@ module.exports = function navBarWithDrawer({drawerContent}) {
             >
                 <div className={classes.drawerContainer}>
                     <List>
-                        <ListItem className={classes.logoContainer}>
+                        <ListItem
+                            className={classes.logoContainer}
+                            onClick={toggleDrawer(false)}
+                        >
                             <AnchorElement href="/">
                                 <img
                                     src={config.companyLogoSrc}
@@ -67,30 +70,33 @@ module.exports = function navBarWithDrawer({drawerContent}) {
 
                         {typeof drawerContent != "undefined" && (
                             <>
-                                <ListItem>{drawerContent}</ListItem>
+                                <ListItem onClick={toggleDrawer(false)}>
+                                    {drawerContent}
+                                </ListItem>
                                 <Divider />
                             </>
                         )}
                         {config.drawerList.map((item, i) => {
                             return (
-                                <ListItem button key={i}>
-                                    <AnchorElement
-                                        href={config.links[item][0]}
-                                        target={
-                                            config.links[item][1]
-                                                ? "_blank"
-                                                : "_self"
-                                        }
-                                        className={classes.anchor}
-                                    >
+                                <AnchorElement
+                                    key={i}
+                                    href={config.links[item][0]}
+                                    target={
+                                        config.links[item][1]
+                                            ? "_blank"
+                                            : "_self"
+                                    }
+                                    onClick={toggleDrawer(false)}
+                                >
+                                    <ListItem button>
                                         <ListItemText
                                             primary={item}
                                             primaryTypographyProps={{
                                                 variant: "h6",
                                             }}
                                         />
-                                    </AnchorElement>
-                                </ListItem>
+                                    </ListItem>
+                                </AnchorElement>
                             );
                         })}
                     </List>
@@ -145,6 +151,10 @@ module.exports = function navBarWithDrawer({drawerContent}) {
                     </Grid>
                 </Toolbar>
             </AppBar>
+            <Toolbar style={{height: 64}} />
+            <div className={classes.advertise}>
+                <a href={config.advertise.link}>{config.advertise.text}</a>
+            </div>
             <Toolbar />
         </div>
     );
