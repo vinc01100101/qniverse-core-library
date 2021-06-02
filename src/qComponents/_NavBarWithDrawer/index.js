@@ -3,7 +3,6 @@ const React = require("react");
 const {
     AppBar,
     Toolbar,
-    Grid,
     IconButton,
     SwipeableDrawer,
     List,
@@ -92,7 +91,10 @@ module.exports = function navBarWithDrawer({drawerContent}) {
                                         <ListItemText
                                             primary={item}
                                             primaryTypographyProps={{
-                                                variant: "h6",
+                                                variant: "body1",
+                                            }}
+                                            primaryTypographyProps={{
+                                                style: {fontWeight: "bold"},
                                             }}
                                         />
                                     </ListItem>
@@ -103,11 +105,14 @@ module.exports = function navBarWithDrawer({drawerContent}) {
                     <List className={classes.footerList}>
                         <ListItem>
                             {logoLinks.map((logoLink, i) => (
-                                <a key={i} href={logoLink[0]} target="_blank">
-                                    <IconButton aria-label={logoLink[2]}>
-                                        {logoLink[1]}
-                                    </IconButton>
-                                </a>
+                                <IconButton
+                                    aria-label={logoLink[2]}
+                                    key={i}
+                                    href={logoLink[0]}
+                                    target="_blank"
+                                >
+                                    {logoLink[1]}
+                                </IconButton>
                             ))}
                         </ListItem>
                         <ListItem>
@@ -121,39 +126,51 @@ module.exports = function navBarWithDrawer({drawerContent}) {
                 </div>
             </SwipeableDrawer>
             <AppBar style={{height: 64}}>
-                <Toolbar style={{height: 64}}>
-                    <Grid container wrap="nowrap">
-                        <Grid item xs={1} className={classes.gridMenu}>
-                            <IconButton
-                                aria-label="Menu Button"
-                                edge="start"
-                                color="inherit"
-                                onClick={toggleDrawer(true)}
-                            >
-                                <Menu />
-                            </IconButton>
-                        </Grid>
-                        <Grid
-                            item
-                            xs={10}
-                            sm={4}
-                            container
-                            className={classes.gridTitle}
-                            alignItems="center"
+                <Toolbar style={{height: 64}} className={classes.toolbar}>
+                    <div>
+                        <IconButton
+                            aria-label="Menu Button"
+                            edge="start"
+                            color="inherit"
+                            onClick={toggleDrawer(true)}
                         >
-                            <a aria-label="Home" href="#" style={{height: 56}}>
-                                <img
-                                    src={config.companyLogoSrc}
-                                    style={{height: "inherit"}}
-                                />
-                            </a>
-                        </Grid>
-                    </Grid>
+                            <Menu />
+                        </IconButton>
+                        <a
+                            aria-label="Home"
+                            href="#"
+                            className="appbar-logo-container"
+                        >
+                            <img
+                                src={config.companyLogoSrc}
+                                className={classes.logo}
+                            />
+                        </a>
+                    </div>
+                    <div>
+                        {config.navList.map((navName, i) => {
+                            const NavIcon = config.navIcons[i];
+                            return (
+                                <IconButton
+                                    key={i}
+                                    href={config.links[navName][0]}
+                                    target="_blank"
+                                    aria-label={navName}
+                                    className={classes.navLinks}
+                                >
+                                    <NavIcon />
+                                    {navName}
+                                </IconButton>
+                            );
+                        })}
+                    </div>
                 </Toolbar>
             </AppBar>
             <Toolbar style={{height: 64}} />
             <div className={classes.advertise}>
-                <a href={config.advertise.link}>{config.advertise.text}</a>
+                <a href={config.advertise.link} target="_blank">
+                    {config.advertise.text}
+                </a>
             </div>
             <Toolbar />
         </div>

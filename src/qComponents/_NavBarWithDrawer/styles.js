@@ -1,19 +1,27 @@
 const {makeStyles} = require("@material-ui/core/styles");
 
 module.exports = makeStyles((theme) => ({
-    gridMenu: {
+    toolbar: {
         display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-start",
-    },
-    gridTitle: {
-        justifyContent: "center",
-        [theme.breakpoints.up("sm")]: {
-            justifyContent: "flex-start",
-        },
-        "& > a": {
+        justifyContent: "space-between",
+        "& > div": {
             display: "flex",
-            justifyContent: "center",
+            "& > .appbar-logo-container": {
+                width: 120,
+                display: "flex",
+                alignItems: "center",
+            },
+        },
+    },
+    navLinks: {
+        "& > .MuiIconButton-label": {
+            color: theme.palette.primary.contrastText,
+            fontSize: 15,
+            [theme.breakpoints.down("sm")]: {
+                display: "flex",
+                flexDirection: "column",
+                fontSize: 8,
+            },
         },
     },
     drawerContainer: {

@@ -14,6 +14,10 @@ const {
     Grid,
 } = require("../index");
 
+const FrequentlyAskedQuestionsIcon = require("mdi-react/FrequentlyAskedQuestionsIcon");
+const PostOutlineIcon = require("mdi-react/PostOutlineIcon");
+const FaceAgentIcon = require("mdi-react/FaceAgentIcon");
+
 //IIFE (Immediately Invoked Function Expression)
 (() => {
     config.theme = automart;
@@ -37,6 +41,12 @@ const {
         "Contact Us",
         "About Us",
         "Login or Signup",
+    ];
+    config.navList = ["FAQs", "Blog", "Contact Us"];
+    config.navIcons = [
+        FrequentlyAskedQuestionsIcon,
+        PostOutlineIcon,
+        FaceAgentIcon,
     ];
     config.advertise = {
         text: "Selling your car? Pabenta? Pasalo? Go to Sell-My-Car.",

@@ -12,9 +12,11 @@ const defaults = {
         Home: ["/"],
     },
 
-    navList: ["Home"],
+    navList: [],
+    navIcons: [],
     drawerList: ["Home"],
     footerList: [],
+    advertise: {},
     anchorElement: (props) => <a {...props} />,
     imageElement: (props) => <img {...props} />,
 };

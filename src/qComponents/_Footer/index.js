@@ -31,7 +31,10 @@ module.exports = function _footer() {
                     <Anchor href="#">
                         <Image
                             src={config.companyLogoSrc}
-                            style={{width: 115}}
+                            style={{width: 120}}
+                            width={120}
+                            height={30}
+                            layout="fixed"
                         />
                     </Anchor>
                     <div className={classes.linkTexts}>
