@@ -1,6 +1,6 @@
 const React = require("react");
 
-const {IconButton, Container} = require("@material-ui/core");
+const {IconButton, Container, Typography} = require("@material-ui/core");
 //styles
 const useStyles = require("./styles");
 //package config
@@ -49,18 +49,21 @@ module.exports = function _footer() {
                                             : "_self"
                                     }
                                 >
-                                    {item}
+                                    <Typography>{item}</Typography>
                                 </Anchor>
                             );
                         })}
                     </div>
                     <div>
                         {logoLinks.map((logoLink, i) => (
-                            <a key={i} href={logoLink[0]} target="_blank">
-                                <IconButton aria-label={logoLink[2]}>
-                                    {logoLink[1]}
-                                </IconButton>
-                            </a>
+                            <IconButton
+                                aria-label={logoLink[2]}
+                                key={i}
+                                href={logoLink[0]}
+                                target="_blank"
+                            >
+                                {logoLink[1]}
+                            </IconButton>
                         ))}
                     </div>
                 </div>

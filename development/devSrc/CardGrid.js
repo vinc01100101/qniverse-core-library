@@ -12,20 +12,22 @@ module.exports = function CardGrid() {
         warehouseLocation: "Cebu City",
         expiredAt: "2021-09-07T09:22:18.000Z",
         buyNowPrice: "3000000",
+        bidPrice: "2500000",
+        downPayment: "200000",
     };
 
     return (
         <Grid container>
-            <Grid item xs={6} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
+                <_CardVehicle {...e} monthlyAmortization="100000" />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
                 <_CardVehicle {...e} />
             </Grid>
-            <Grid item xs={6} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
                 <_CardVehicle {...e} />
             </Grid>
-            <Grid item xs={6} md={3}>
-                <_CardVehicle {...e} />
-            </Grid>
-            <Grid item xs={6} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
                 <_CardVehicle {...e} />
             </Grid>
         </Grid>

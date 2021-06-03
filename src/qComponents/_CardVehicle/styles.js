@@ -40,14 +40,13 @@ module.exports = makeStyles((theme) => ({
             paddingBottom: "75% !important",
         },
     },
-    // gridItem: {
-    //     flexFlow: "row",
-    //     fontSize: "0.7rem",
-    //     lineHeight: 2,
-    //     "&>svg": {
-    //         marginRight: 5,
-    //     },
-    // },
+    gridItems: {
+        fontSize: "0.7rem",
+        lineHeight: 2,
+        "& svg": {
+            marginRight: 5,
+        },
+    },
     cardActions: {
         justifyContent: "space-between",
         borderTop: "1px solid #e5e5e5",
@@ -56,36 +55,7 @@ module.exports = makeStyles((theme) => ({
         bottom: "0px",
         width: "100%",
     },
-    // button: {
-    //     borderRadius: 0,
-    //     height: 20,
-    //     "& > span.MuiButton-label": {
-    //         fontSize: "0.6rem",
-    //     },
-    // },
-    // cardDescriptionTable: {
-    //     width: "100%",
-    // },
 
-    // cardDescription: {
-    //     minHeight: 60,
-    //     "& > tr > td": {
-    //         color: "#707070",
-    //         letterSpacing: "initial",
-    //         // lineHeight: '1rem',
-    //         fontSize: 11,
-    //         padding: 0,
-    //         borderBottom: "initial",
-    //         [theme.breakpoints.down("sm")]: {
-    //             fontSize: "0.6rem",
-    //         },
-    //         "& > svg": {
-    //             verticalAlign: "text-top",
-    //             marginRight: 3,
-    //             color: "#242424",
-    //         },
-    //     },
-    // },
     buyNowFlag: {
         display: "flex",
         color: theme.palette.primary.main,

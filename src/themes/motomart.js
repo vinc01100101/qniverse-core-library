@@ -18,4 +18,7 @@ module.exports = {
             contrastText: "#fff",
         },
     },
+    typography: {
+        fontFamily: ["Courier Prime"],
+    },
 };

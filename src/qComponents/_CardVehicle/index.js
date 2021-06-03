@@ -29,17 +29,25 @@ const config = require("../../utils/config");
 module.exports = function cardVehicle({
     imageUrl,
     title,
-    price,
     transmissionType,
     odometer,
     fuelType,
     warehouseLocation,
     expiredAt,
+    monthlyAmortization,
+    downPayment,
     buyNowPrice,
+    bidPrice,
 }) {
     const ImageElement = config.imageElement;
-
     const classes = useStyles();
+
+    const makeGridTypography = (label) => (
+        <Grid item xs={6} component={Typography}>
+            {label}
+        </Grid>
+    );
+
     return (
         <Card className={classes.root}>
             <CardActionArea className={classes.mainCardActions}>
@@ -67,46 +75,65 @@ module.exports = function cardVehicle({
                     >
                         {title}
                     </Typography>
-                    <Typography
-                        variant="h6"
-                        component="span"
-                        className={classes.price}
-                    >
-                        {beautifyPrice(price)}
-                    </Typography>
-                    <Grid container>
-                        <Grid item xs={4}>
-                            <CarShiftPatternIcon
-                                style={{marginRight: 5}}
-                                size={12}
-                                viewBox="0 0 24 24"
-                            />
-                            {transmissionType}
-                        </Grid>
-                        <Grid item xs={8}>
-                            <SpeedometerIcon
-                                style={{marginRight: 5}}
-                                size={12}
-                                viewBox="0 0 24 24"
-                            />
-                            {beautifyOdometer(odometer)}
-                        </Grid>
-                        <Grid item xs={4}>
-                            <FuelIcon
-                                style={{marginRight: 5}}
-                                size={12}
-                                viewBox="0 0 24 24"
-                            />
-                            {fuelType}
-                        </Grid>
-                        <Grid item xs={8}>
-                            <MapMarkerIcon
-                                style={{marginRight: 5}}
-                                size={12}
-                                viewBox="0 0 24 24"
-                            />
-                            {warehouseLocation}
-                        </Grid>
+                    {monthlyAmortization ? (
+                        <>
+                            <Typography
+                                variant="h6"
+                                component="span"
+                                className={classes.price}
+                            >
+                                {beautifyPrice(monthlyAmortization)}/ mo.
+                            </Typography>
+                            {downPayment && (
+                                <Grid container>
+                                    {makeGridTypography("DP: ")}
+                                    {makeGridTypography(
+                                        beautifyPrice(downPayment)
+                                    )}
+                                </Grid>
+                            )}
+                            {buyNowPrice && (
+                                <Grid container>
+                                    {makeGridTypography("Buy Now Price: ")}
+                                    {makeGridTypography(
+                                        beautifyPrice(buyNowPrice)
+                                    )}
+                                </Grid>
+                            )}
+                            {bidPrice && (
+                                <Grid container>
+                                    {makeGridTypography("Bid Price: ")}
+                                    {makeGridTypography(
+                                        beautifyPrice(bidPrice)
+                                    )}
+                                </Grid>
+                            )}
+                        </>
+                    ) : (
+                        <Typography
+                            variant="h6"
+                            component="span"
+                            className={classes.price}
+                        >
+                            {beautifyPrice(buyNowPrice)}
+                        </Typography>
+                    )}
+
+                    <Grid container className={classes.gridItems}>
+                        {[
+                            [CarShiftPatternIcon, transmissionType],
+                            [SpeedometerIcon, beautifyOdometer(odometer)],
+                            [FuelIcon, fuelType],
+                            [MapMarkerIcon, warehouseLocation],
+                        ].map(([Icon, label], i) => {
+                            const newEntry = (
+                                <div key={i}>
+                                    <Icon size={12} viewBox="0 0 24 24" />
+                                    {label}
+                                </div>
+                            );
+                            return makeGridTypography(newEntry);
+                        })}
                     </Grid>
                 </CardContent>
                 <CardActions className={classes.cardActions}>
@@ -117,7 +144,7 @@ module.exports = function cardVehicle({
                         {buyNowPrice && (
                             <>
                                 <FlashIcon size={12} viewBox="0 0 24 24" />
-                                Buy Now
+                                <Typography>Buy Now</Typography>
                             </>
                         )}
                     </div>

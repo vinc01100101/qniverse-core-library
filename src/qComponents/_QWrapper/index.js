@@ -12,7 +12,9 @@ module.exports = function qWrapper({children}) {
             {/* this svg sprite is hidden, images are called in src/svgStore/svgCall.js */}
             <SvgSprite />
             <CssBaseline />
-            <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>
+            <ThemeProvider theme={muiTheme}>
+                <main>{children}</main>
+            </ThemeProvider>
         </>
     );
 };

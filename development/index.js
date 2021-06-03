@@ -5,7 +5,7 @@ const {
     _QWrapper,
     _NavBarWithDrawer,
     _Footer,
-    automart,
+    motomart,
     config,
     Button,
     List,
@@ -20,7 +20,7 @@ const FaceAgentIcon = require("mdi-react/FaceAgentIcon");
 
 //IIFE (Immediately Invoked Function Expression)
 (() => {
-    config.theme = automart;
+    config.theme = motomart;
     config.companyLogoSrc = "dist/Automart_Logo.svg";
     config.links = {
         ...config.links,
@@ -60,6 +60,13 @@ function App() {
 
     return (
         <>
+            <head>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+                />
+            </head>
             <_QWrapper>
                 <_NavBarWithDrawer drawerContent={drawerContent} />
 

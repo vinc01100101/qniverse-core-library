@@ -86,15 +86,13 @@ module.exports = function navBarWithDrawer({drawerContent}) {
                                             : "_self"
                                     }
                                     onClick={toggleDrawer(false)}
+                                    className={classes.listItemText}
                                 >
                                     <ListItem button>
                                         <ListItemText
                                             primary={item}
                                             primaryTypographyProps={{
                                                 variant: "body1",
-                                            }}
-                                            primaryTypographyProps={{
-                                                style: {fontWeight: "bold"},
                                             }}
                                         />
                                     </ListItem>

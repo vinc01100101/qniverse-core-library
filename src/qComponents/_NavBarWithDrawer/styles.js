@@ -32,13 +32,16 @@ module.exports = makeStyles((theme) => ({
         background: "white",
         width: "300px",
         padding: "20px",
-        "& a": {
-            textDecoration: "none",
-            color: "black",
-        },
+    },
+    listItemText: {
+        textDecoration: "none",
+        color: "black",
     },
     footerList: {
         background: theme.palette.primary.main,
+        "& svg": {
+            color: theme.palette.primary.contrastText,
+        },
     },
     logo: {
         width: "100%",
