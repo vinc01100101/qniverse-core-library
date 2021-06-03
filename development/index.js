@@ -60,13 +60,11 @@ function App() {
 
     return (
         <>
-            <head>
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
-                />
-            </head>
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+            />
             <_QWrapper>
                 <_NavBarWithDrawer drawerContent={drawerContent} />
 

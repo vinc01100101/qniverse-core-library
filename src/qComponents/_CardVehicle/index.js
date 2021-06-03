@@ -42,11 +42,14 @@ module.exports = function cardVehicle({
     const ImageElement = config.imageElement;
     const classes = useStyles();
 
-    const makeGridTypography = (label) => (
-        <Grid item xs={6} component={Typography}>
-            {label}
-        </Grid>
-    );
+    const makeGridTypography = (label, i) => {
+        console.log(i);
+        return (
+            <Grid item xs={6} component={Typography} key={i}>
+                {label}
+            </Grid>
+        );
+    };
 
     return (
         <Card className={classes.root}>
@@ -127,12 +130,12 @@ module.exports = function cardVehicle({
                             [MapMarkerIcon, warehouseLocation],
                         ].map(([Icon, label], i) => {
                             const newEntry = (
-                                <div key={i}>
+                                <>
                                     <Icon size={12} viewBox="0 0 24 24" />
                                     {label}
-                                </div>
+                                </>
                             );
-                            return makeGridTypography(newEntry);
+                            return makeGridTypography(newEntry, i);
                         })}
                     </Grid>
                 </CardContent>
