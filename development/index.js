@@ -13,7 +13,8 @@ const {
     Typography,
     Grid,
 } = require("../index");
-
+console.log("QWrapper is: ");
+console.log(_QWrapper);
 const FrequentlyAskedQuestionsIcon = require("mdi-react/FrequentlyAskedQuestionsIcon");
 const PostOutlineIcon = require("mdi-react/PostOutlineIcon");
 const FaceAgentIcon = require("mdi-react/FaceAgentIcon");

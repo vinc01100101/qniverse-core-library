@@ -16,7 +16,15 @@ const config = require("./src/utils/config");
 const mui = require("@material-ui/core");
 const muiStyles = require("@material-ui/core/styles");
 
-module.exports = {
+const exporter = (package) => {
+    const entries = Object.entries(package);
+    entries.map((entry) => {
+        exports[entry[0]] = entry[1];
+    });
+};
+exporter(mui);
+exporter(muiStyles);
+exporter({
     _NavBarWithDrawer,
     _Footer,
     _CardVehicle,
@@ -25,6 +33,17 @@ module.exports = {
     motomart,
     sellMyCar,
     config,
-    ...mui,
-    ...muiStyles,
-};
+});
+// console.log(exports);
+// module.exports = {
+//     _NavBarWithDrawer,
+//     _Footer,
+//     _CardVehicle,
+//     _QWrapper,
+//     automart,
+//     motomart,
+//     sellMyCar,
+//     config,
+//     ...mui,
+//     ...muiStyles,
+// };

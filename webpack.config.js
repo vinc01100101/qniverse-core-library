@@ -1,5 +1,7 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin =
+    require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = (env) => {
     let entry, ext;
@@ -54,6 +56,7 @@ module.exports = (env) => {
             new htmlWebpackPlugin({
                 template: "./development/index.html",
             }),
+            new BundleAnalyzerPlugin({analyzerMode: "static"}),
         ],
         devServer: {
             port: 3000,
