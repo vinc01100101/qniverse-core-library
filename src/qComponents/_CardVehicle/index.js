@@ -42,14 +42,11 @@ module.exports = function cardVehicle({
     const ImageElement = config.imageElement;
     const classes = useStyles();
 
-    const makeGridTypography = (label, i) => {
-        console.log(i);
-        return (
-            <Grid item xs={6} component={Typography} key={i}>
-                {label}
-            </Grid>
-        );
-    };
+    const makeGridTypography = (label, i) => (
+        <Grid item xs={6} component={Typography} key={i}>
+            {label}
+        </Grid>
+    );
 
     return (
         <Card className={classes.root}>
