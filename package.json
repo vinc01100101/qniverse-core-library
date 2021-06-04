@@ -1,6 +1,6 @@
 {
     "name": "@qniverse/core",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Core component for all QNiverse platforms.",
     "main": "./dist/index.js",
     "scripts": {
