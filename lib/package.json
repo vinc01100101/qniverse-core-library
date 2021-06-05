@@ -1,0 +1,22 @@
+{
+    "name": "@qniverse/core",
+    "version": "1.0.9",
+    "description": "Core component for all QNiverse platforms.",
+    "scripts": {},
+    "author": "qmarketz dev team",
+    "license": "ISC",
+    "peerDependencies": {
+        "@material-ui/core": "^4.11.4",
+        "@material-ui/icons": "^4.11.2",
+        "mdi-react": "^7.5.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "keywords": [
+        "qniverse",
+        "react",
+        "material-ui",
+        "core",
+        "component"
+    ]
+}
