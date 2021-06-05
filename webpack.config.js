@@ -80,11 +80,11 @@ module.exports = (env) => {
                 react: path.resolve(__dirname, "node_modules", "react"),
             },
         },
-        optimization: {
-            splitChunks: {
-                // include all types of chunks
-                chunks: "all",
-            },
-        },
+        // optimization: {
+        //     splitChunks: {
+        //         // include all types of chunks
+        //         chunks: "all",
+        //     },
+        // },
     };
 };
