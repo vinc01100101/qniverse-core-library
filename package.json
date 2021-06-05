@@ -1,6 +1,6 @@
 {
     "name": "@qniverse/core",
-    "version": "1.0.84",
+    "version": "1.0.85",
     "description": "Core component for all QNiverse platforms.",
     "main": "./lib/index.js",
     "scripts": {
