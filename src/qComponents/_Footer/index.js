@@ -1,10 +1,10 @@
 import React from "react";
 
-import {IconButton, Container, Typography} from "@material-ui/core";
+import {IconButton, Container, Typography, Button} from "@material-ui/core";
 //styles
 import useStyles from "./styles";
 //package config
-import config from "../../utils/config";
+import config from "./config";
 //svg's
 import {facebook, instagram, linkedIn, youtube} from "../../svgStore/svgCall";
 
@@ -60,6 +60,13 @@ export default function _footer() {
                                 {logoLink[1]}
                             </IconButton>
                         ))}
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                        >
+                            Sample Button 2
+                        </Button>
                     </div>
                 </div>
             </Container>

@@ -16,11 +16,12 @@ import {Menu} from "@material-ui/icons";
 //styles
 import useStyles from "./styles";
 //package config
-import config from "../../utils/config";
+import config from "./config";
 //svg's
 import {facebook, instagram, linkedIn, youtube} from "../../svgStore/svgCall";
 
-export default function navBarWithDrawer({drawerContent}) {
+export default function navBarWithDrawer({drawerContent}, ...props) {
+    console.log(props);
     //reassign to an array
     const logoLinks = [
         [config.links.facebook, facebook, "Facebook"],

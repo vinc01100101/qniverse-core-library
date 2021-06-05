@@ -23,7 +23,7 @@ import {
 } from "../../utils/formatData";
 
 //package config
-import config from "../../utils/config";
+import config from "./config";
 
 export default function cardVehicle({
     imageUrl,

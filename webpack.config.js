@@ -19,7 +19,7 @@ module.exports = (env) => {
             automart: "./src/themes/automart.js",
             motomart: "./src/themes/motomart.js",
             sellMyCar: "./src/themes/sellMyCar.js",
-            config: "./src/utils/config.js",
+            // config: "./src/utils/config.js",
         };
         ext = {
             // Use external version of React
@@ -34,6 +34,21 @@ module.exports = (env) => {
                 commonjs2: "react-dom",
                 amd: "react-dom",
                 root: "ReactDOM",
+            },
+            "@material-ui/core": {
+                commonjs: "@material-ui/core",
+                commonjs2: "@material-ui/core",
+                amd: "@material-ui/core",
+            },
+            "@material-ui/styles": {
+                commonjs: "@material-ui/styles",
+                commonjs2: "@material-ui/styles",
+                amd: "@material-ui/styles",
+            },
+            "./config": {
+                commonjs: "./config",
+                commonjs2: "./config",
+                amd: "./config",
             },
         };
         outputPath = path.join(__dirname, "/lib");
@@ -66,10 +81,10 @@ module.exports = (env) => {
             ],
         },
         plugins: [
-            new htmlWebpackPlugin({
-                template: "./development/index.html",
-            }),
-            new BundleAnalyzerPlugin({analyzerMode: "static"}),
+            // new htmlWebpackPlugin({
+            //     template: "./development/index.html",
+            // }),
+            // new BundleAnalyzerPlugin({analyzerMode: "static"}),
         ],
         devServer: {
             port: 3000,

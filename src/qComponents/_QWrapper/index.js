@@ -1,10 +1,10 @@
 import React from "react";
 import {ThemeProvider, createMuiTheme} from "@material-ui/core/styles";
 import {CssBaseline} from "@material-ui/core";
-import config from "../../utils/config";
+//package config
+import config from "./config";
 //svg sprite
 import SvgSprite from "../../svgStore/sprite";
-
 export default function qWrapper({children}) {
     const muiTheme = createMuiTheme(config.theme);
     return (
