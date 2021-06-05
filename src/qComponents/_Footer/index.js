@@ -60,13 +60,6 @@ export default function _footer() {
                                 {logoLink[1]}
                             </IconButton>
                         ))}
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            size="large"
-                        >
-                            Sample Button 2
-                        </Button>
                     </div>
                 </div>
             </Container>
