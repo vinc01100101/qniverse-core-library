@@ -1,6 +1,6 @@
-const React = require("react");
+import React from "react";
 
-const {
+import {
     AppBar,
     Toolbar,
     IconButton,
@@ -10,22 +10,17 @@ const {
     ListItemText,
     Typography,
     Divider,
-} = require("@material-ui/core");
-const {Menu} = require("@material-ui/icons");
+} from "@material-ui/core";
+import {Menu} from "@material-ui/icons";
 
 //styles
-const useStyles = require("./styles");
+import useStyles from "./styles";
 //package config
-const config = require("../../utils/config");
+import config from "../../utils/config";
 //svg's
-const {
-    facebook,
-    instagram,
-    linkedIn,
-    youtube,
-} = require("../../svgStore/svgCall");
+import {facebook, instagram, linkedIn, youtube} from "../../svgStore/svgCall";
 
-module.exports = function navBarWithDrawer({drawerContent}) {
+export default function navBarWithDrawer({drawerContent}) {
     //reassign to an array
     const logoLinks = [
         [config.links.facebook, facebook, "Facebook"],
@@ -173,4 +168,4 @@ module.exports = function navBarWithDrawer({drawerContent}) {
             <Toolbar />
         </div>
     );
-};
+}

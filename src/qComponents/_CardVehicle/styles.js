@@ -1,6 +1,6 @@
-const {makeStyles} = require("@material-ui/core/styles");
+import {makeStyles} from "@material-ui/core/styles";
 
-module.exports = makeStyles((theme) => ({
+export default makeStyles((theme) => ({
     root: {
         height: "100%",
         position: "relative",

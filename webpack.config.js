@@ -4,12 +4,23 @@ const BundleAnalyzerPlugin =
     require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = (env) => {
-    let entry, ext;
+    let entry, ext, outputPath;
     if (env.mode == "development") {
         entry = "./development/index.js";
         ext = {};
+        outputPath = path.join(__dirname, "/dist");
     } else {
-        entry = "./index.js";
+        // entry = "./index.js";
+        entry = {
+            _CardVehicle: "./src/qComponents/_CardVehicle/index.js",
+            _Footer: "./src/qComponents/_Footer/index.js",
+            _NavBarWithDrawer: "./src/qComponents/_NavBarWithDrawer/index.js",
+            _QWrapper: "./src/qComponents/_QWrapper/index.js",
+            automart: "./src/themes/automart.js",
+            motomart: "./src/themes/motomart.js",
+            sellMyCar: "./src/themes/sellMyCar.js",
+            config: "./src/utils/config.js",
+        };
         ext = {
             // Use external version of React
             react: {
@@ -25,6 +36,7 @@ module.exports = (env) => {
                 root: "ReactDOM",
             },
         };
+        outputPath = path.join(__dirname, "/lib");
     }
 
     console.log("MODE IS: " + env.mode);
@@ -36,9 +48,10 @@ module.exports = (env) => {
         output: {
             library: "@qniverse/core",
             libraryTarget: "umd",
-            path: path.join(__dirname, "/dist"),
+            path: outputPath,
             publicPath: "",
-            filename: "index.js",
+            // filename: "index.js",
+            filename: "[name].js",
             globalObject: "this",
         },
         module: {
@@ -65,6 +78,12 @@ module.exports = (env) => {
         resolve: {
             alias: {
                 react: path.resolve(__dirname, "node_modules", "react"),
+            },
+        },
+        optimization: {
+            splitChunks: {
+                // include all types of chunks
+                chunks: "all",
             },
         },
     };

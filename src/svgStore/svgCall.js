@@ -1,41 +1,41 @@
-const React = require("react");
+import React from "react";
 
 /**
  * these svg's are referencing from ./sprite.js which is imported in the _app.js
  * just follow the format when adding new svg to the ./sprite.js
  */
 
-exports.linkedIn = (
+export const linkedIn = (
     <svg width={24} height={24}>
         <use xlinkHref="#logo-linkedin" />
     </svg>
 );
-exports.youtube = (
+export const youtube = (
     <svg width={24} height={24}>
         <use xlinkHref="#logo-youtube" />
     </svg>
 );
-exports.facebook = (
+export const facebook = (
     <svg width={24} height={24}>
         <use xlinkHref="#logo-facebook" />
     </svg>
 );
-exports.instagram = (
+export const instagram = (
     <svg width={24} height={24}>
         <use xlinkHref="#logo-instagram" />
     </svg>
 );
-exports.telephone = (
+export const telephone = (
     <svg width={32} height={32}>
         <use xlinkHref="#logo-telephone" />
     </svg>
 );
-exports.viber = (
+export const viber = (
     <svg width={32} height={34}>
         <use xlinkHref="#logo-viber" />
     </svg>
 );
-exports.atSign = (
+export const atSign = (
     <svg width={32} height={32}>
         <use xlinkHref="#logo-atsign" />
     </svg>

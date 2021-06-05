@@ -1,19 +1,14 @@
-const React = require("react");
+import React from "react";
 
-const {IconButton, Container, Typography} = require("@material-ui/core");
+import {IconButton, Container, Typography} from "@material-ui/core";
 //styles
-const useStyles = require("./styles");
+import useStyles from "./styles";
 //package config
-const config = require("../../utils/config");
+import config from "../../utils/config";
 //svg's
-const {
-    facebook,
-    instagram,
-    linkedIn,
-    youtube,
-} = require("../../svgStore/svgCall");
+import {facebook, instagram, linkedIn, youtube} from "../../svgStore/svgCall";
 
-module.exports = function _footer() {
+export default function _footer() {
     const classes = useStyles();
     const Image = config.imageElement;
     const Anchor = config.anchorElement;
@@ -70,4 +65,4 @@ module.exports = function _footer() {
             </Container>
         </div>
     );
-};
+}

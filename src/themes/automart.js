@@ -1,8 +1,7 @@
-const createBreakpoints =
-    require("@material-ui/core/styles/createBreakpoints").default;
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 const breakpoints = createBreakpoints({});
 
-module.exports = {
+export default {
     palette: {
         primary: {
             light: "#545678",

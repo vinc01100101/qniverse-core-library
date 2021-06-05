@@ -1,6 +1,5 @@
-const React = require("react");
-const {makeStyles} = require("@material-ui/core/styles");
-const {EuroSymbolRounded} = require("@material-ui/icons");
+import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles({
     sprite: {
         display: "none",
@@ -20,7 +19,7 @@ const useStyles = makeStyles({
  *
  * (NOTE: When the svg size is large(20kb ++), don't add it here, use image instead)
  */
-module.exports = function SvgSprite() {
+export default function SvgSprite() {
     const classes = useStyles();
     return (
         <svg width={0} height={0} className={classes.sprite}>
@@ -142,4 +141,4 @@ module.exports = function SvgSprite() {
             </symbol>
         </svg>
     );
-};
+}

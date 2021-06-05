@@ -1,32 +1,31 @@
-// import NextImage from "next/image";
-const React = require("react");
+import React from "react";
 //mui
-const {
+import {
     Card,
     CardActionArea,
     CardContent,
     CardActions,
     Typography,
     Grid,
-} = require("@material-ui/core");
+} from "@material-ui/core";
 //mdi-react
-const CarShiftPatternIcon = require("mdi-react/CarShiftPatternIcon");
-const SpeedometerIcon = require("mdi-react/SpeedometerIcon");
-const FuelIcon = require("mdi-react/FuelIcon");
-const MapMarkerIcon = require("mdi-react/MapMarkerIcon");
-const FlashIcon = require("mdi-react/FlashIcon");
+import CarShiftPatternIcon from "mdi-react/CarShiftPatternIcon";
+import SpeedometerIcon from "mdi-react/SpeedometerIcon";
+import FuelIcon from "mdi-react/FuelIcon";
+import MapMarkerIcon from "mdi-react/MapMarkerIcon";
+import FlashIcon from "mdi-react/FlashIcon";
 
-const useStyles = require("./styles");
-const {
+import useStyles from "./styles";
+import {
     beautifyPrice,
     beautifyOdometer,
     initializeClock,
-} = require("../../utils/formatData");
+} from "../../utils/formatData";
 
 //package config
-const config = require("../../utils/config");
+import config from "../../utils/config";
 
-module.exports = function cardVehicle({
+export default function cardVehicle({
     imageUrl,
     title,
     transmissionType,
@@ -152,4 +151,4 @@ module.exports = function cardVehicle({
             </CardActionArea>
         </Card>
     );
-};
+}

@@ -1,17 +1,16 @@
-exports.beautifyPrice = function (price) {
+export const beautifyPrice = function (price) {
     // add ₱ and remove .00
     let newPrice = "₱ " + parseFloat(price);
     // format the Price
     return newPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-exports.beautifyOdometer = function (odometer) {
+export const beautifyOdometer = function (odometer) {
     return odometer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " KM";
 };
 
 function getTimeRemaining(endtime) {
-    const total =
-        Date.parse(endtime.replace("Z", "")) - Date.parse(new Date());
+    const total = Date.parse(endtime.replace("Z", "")) - Date.parse(new Date());
     const seconds = Math.floor((total / 1000) % 60);
     const minutes = Math.floor((total / 1000 / 60) % 60);
     const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
@@ -26,7 +25,7 @@ function getTimeRemaining(endtime) {
     };
 }
 
-exports.initializeClock = function (endtime) {
+export const initializeClock = function (endtime) {
     const time = getTimeRemaining(endtime);
     let html;
     if (time.days > 0) {
@@ -39,4 +38,4 @@ exports.initializeClock = function (endtime) {
         html = "Auction Ended";
     }
     return html;
-};;
+};

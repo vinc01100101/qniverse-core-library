@@ -3,7 +3,7 @@ const {_CardVehicle, Grid} = require("../../index");
 
 module.exports = function CardGrid() {
     const e = {
-        imageUrl: "dist/sampleCar.jpg",
+        imageUrl: "dist/assets/sampleCar.jpg",
         title: "Sample Car",
         price: 1000000,
         transmissionType: "MT",

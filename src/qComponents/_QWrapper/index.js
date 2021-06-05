@@ -1,11 +1,11 @@
-const React = require("react");
-const {ThemeProvider, createMuiTheme} = require("@material-ui/core/styles");
-const {CssBaseline} = require("@material-ui/core");
-const config = require("../../utils/config");
+import React from "react";
+import {ThemeProvider, createMuiTheme} from "@material-ui/core/styles";
+import {CssBaseline} from "@material-ui/core";
+import config from "../../utils/config";
 //svg sprite
-const SvgSprite = require("../../svgStore/sprite");
+import SvgSprite from "../../svgStore/sprite";
 
-module.exports = function qWrapper({children}) {
+export default function qWrapper({children}) {
     const muiTheme = createMuiTheme(config.theme);
     return (
         <>
@@ -17,4 +17,4 @@ module.exports = function qWrapper({children}) {
             </ThemeProvider>
         </>
     );
-};
+}

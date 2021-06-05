@@ -22,7 +22,7 @@ const FaceAgentIcon = require("mdi-react/FaceAgentIcon");
 //IIFE (Immediately Invoked Function Expression)
 (() => {
     config.theme = motomart;
-    config.companyLogoSrc = "dist/Automart_Logo.svg";
+    config.companyLogoSrc = "dist/assets/Automart_Logo.svg";
     config.links = {
         ...config.links,
         Home: ["/"],

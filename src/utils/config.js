@@ -1,4 +1,4 @@
-const React = require("react");
+import React from "react";
 const defaults = {
     theme: require("../themes/motomart"),
     links: {
@@ -20,6 +20,6 @@ const defaults = {
     anchorElement: (props) => <a {...props} />,
     imageElement: (props) => <img {...props} />,
 };
-module.exports = {
+export default {
     ...defaults,
 };
