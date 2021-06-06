@@ -20,7 +20,7 @@ import config from "./config";
 //svg's
 import {facebook, instagram, linkedIn, youtube} from "../../svgStore/svgCall";
 
-export default function navBarWithDrawer({drawerContent}) {
+export default function navBarWithDrawer({drawerContent, SearchBar}) {
     //reassign to an array
     const logoLinks = [
         [config.links.facebook, facebook, "Facebook"],
@@ -129,16 +129,17 @@ export default function navBarWithDrawer({drawerContent}) {
                         >
                             <Menu />
                         </IconButton>
-                        <a
+                        <AnchorElement
                             aria-label="Home"
-                            href="#"
+                            href="/"
                             className="appbar-logo-container"
                         >
                             <img
                                 src={config.companyLogoSrc}
                                 className={classes.logo}
                             />
-                        </a>
+                        </AnchorElement>
+                        {SearchBar && <SearchBar />}
                     </div>
                     <div>
                         {config.navList.map((navName, i) => {

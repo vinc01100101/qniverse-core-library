@@ -1,7 +1,8 @@
-const React = require("react");
-const {_CardVehicle, Grid} = require("../../index");
+import React from "react";
+import _CardVehicle from "../../src/qComponents/_CardVehicle/index";
+import {Grid} from "@material-ui/core";
 
-module.exports = function CardGrid() {
+export default function CardGrid() {
     const e = {
         imageUrl: "dist/assets/sampleCar.jpg",
         title: "Sample Car",
@@ -22,7 +23,7 @@ module.exports = function CardGrid() {
                 <_CardVehicle {...e} monthlyAmortization="100000" />
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-                <_CardVehicle {...e} />
+                <_CardVehicle {...e} title="2018 Yamaha 125" />
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
                 <_CardVehicle {...e} />
@@ -32,4 +33,4 @@ module.exports = function CardGrid() {
             </Grid>
         </Grid>
     );
-};
+}

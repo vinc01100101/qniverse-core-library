@@ -4,6 +4,10 @@ export default makeStyles((theme) => ({
     root: {
         height: "100%",
         position: "relative",
+        "& a": {
+            textDecoration: "none",
+            color: "inherit",
+        },
     },
     mainCardActions: {
         height: "100%",
@@ -27,6 +31,7 @@ export default makeStyles((theme) => ({
     },
     cardTitle: {
         fontWeight: 500,
+        fontSize: "1.25rem",
         height: "3.1rem",
         display: "block",
         textOverflow: "ellipsis",
@@ -34,17 +39,30 @@ export default makeStyles((theme) => ({
         overflow: "hidden",
         lineHeight: "1.6rem",
     },
-    price: {color: "#ff932c"},
+    price: {color: "rgb(250, 189, 9)"},
     image: {
-        "&>div": {
+        "& > div": {
             paddingBottom: "75% !important",
         },
     },
+    installmentTerms: {
+        "& > div > p": {
+            fontSize: "0.8rem",
+            color: "#707070",
+        },
+    },
     gridItems: {
-        fontSize: "0.7rem",
         lineHeight: 2,
-        "& svg": {
-            marginRight: 5,
+        "& > p": {
+            color: "#707070",
+            fontSize: "0.6rem",
+            [theme.breakpoints.up("md")]: {
+                fontSize: "11px",
+            },
+            "& > svg": {
+                marginRight: 5,
+                color: "#242424",
+            },
         },
     },
     cardActions: {

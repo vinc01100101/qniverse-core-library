@@ -1,4 +1,5 @@
-const React = require("react");
+//FOR DEV USE ONLY
+
 const defaults = {
     theme: require("../themes/motomart").default,
     links: {
@@ -17,9 +18,9 @@ const defaults = {
     drawerList: ["Home"],
     footerList: [],
     advertise: {},
-    anchorElement: (props) => <a {...props} />,
-    imageElement: (props) => <img {...props} />,
+    anchorElement: "Not Set",
+    imageElement: "Not Set",
 };
-module.exports = {
+export default {
     ...defaults,
 };

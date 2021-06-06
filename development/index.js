@@ -1,62 +1,60 @@
 require("@babel/polyfill");
-const React = require("react");
-const ReactDOM = require("react-dom");
-const {
-    _QWrapper,
-    _NavBarWithDrawer,
-    _Footer,
-    motomart,
-    config,
-    Button,
-    List,
-    ListItem,
-    Typography,
-    Grid,
-} = require("../index");
-console.log("QWrapper is: ");
-console.log(_QWrapper);
-const FrequentlyAskedQuestionsIcon = require("mdi-react/FrequentlyAskedQuestionsIcon");
-const PostOutlineIcon = require("mdi-react/PostOutlineIcon");
-const FaceAgentIcon = require("mdi-react/FaceAgentIcon");
+import React from "react";
+import ReactDOM from "react-dom";
 
-//IIFE (Immediately Invoked Function Expression)
-(() => {
-    config.theme = motomart;
-    config.companyLogoSrc = "dist/assets/Automart_Logo.svg";
-    config.links = {
-        ...config.links,
-        Home: ["/"],
-        FAQs: ["http://automart.ph/blog/frequently-asked-questions", true],
-        Blog: ["http://automart.ph/blog", true],
-        Reviews: ["http://automart.ph/reviews", true],
-        "Contact Us": ["http://automart.ph/contact-us", true],
-        "About Us": ["http://automart.ph/page/about-us", true],
-        "Login or Signup": ["https://automart.ph/login", true],
-    };
-    config.drawerList = ["FAQs", "Contact Us", "Blog"];
-    config.footerList = [
-        "FAQs",
-        "Contact Us",
-        "Blog",
-        "Reviews",
-        "Contact Us",
-        "About Us",
-        "Login or Signup",
-    ];
-    config.navList = ["FAQs", "Blog", "Contact Us"];
-    config.navIcons = [
-        FrequentlyAskedQuestionsIcon,
-        PostOutlineIcon,
-        FaceAgentIcon,
-    ];
-    config.advertise = {
-        text: "Selling your car? Pabenta? Pasalo? Go to Sell-My-Car.",
-        link: "http://automart.ph/",
-    };
-})();
+import _QWrapper from "../src/qComponents/_QWrapper";
+import _NavBarWithDrawer from "../src/qComponents/_NavBarWithDrawer";
+import _Footer from "../src/qComponents/_Footer";
+import automart from "../src/themes/automart";
+import config from "../src/utils/config";
+import {Button} from "@material-ui/core";
 
-const CardGrid = require("./devSrc/CardGrid");
+import FrequentlyAskedQuestionsIcon from "mdi-react/FrequentlyAskedQuestionsIcon";
+import PostOutlineIcon from "mdi-react/PostOutlineIcon";
+import FaceAgentIcon from "mdi-react/FaceAgentIcon";
+
+import CardGrid from "./devSrc/CardGrid";
 function App() {
+    //IIFE (Immediately Invoked Function Expression)
+    (() => {
+        config.theme = automart;
+        config.companyLogoSrc = "dist/assets/Automart_Logo.svg";
+        config.links = {
+            ...config.links,
+            Home: ["/"],
+            FAQs: ["http://automart.ph/blog/frequently-asked-questions", true],
+            Blog: ["http://automart.ph/blog", true],
+            Reviews: ["http://automart.ph/reviews", true],
+            "Contact Us": ["http://automart.ph/contact-us", true],
+            "About Us": ["http://automart.ph/page/about-us", true],
+            "Login or Signup": ["https://automart.ph/login", true],
+        };
+        config.drawerList = ["FAQs", "Contact Us", "Blog"];
+        config.footerList = [
+            "FAQs",
+            "Contact Us",
+            "Blog",
+            "Reviews",
+            "Contact Us",
+            "About Us",
+            "Login or Signup",
+        ];
+        config.navList = ["FAQs", "Blog", "Contact Us"];
+        config.navIcons = [
+            FrequentlyAskedQuestionsIcon,
+            PostOutlineIcon,
+            FaceAgentIcon,
+        ];
+        config.advertise = {
+            text: "Selling your car? Pabenta? Pasalo? Go to Sell-My-Car.",
+            link: "http://automart.ph/",
+        };
+        config.imageElement = (props) => (
+            <img {...props} style={{width: "100%", objectFit: "contain"}} />
+        );
+        config.anchorElement = (props) => <a {...props} />;
+    })();
+    console.log(config);
     const drawerContent = "Optional Component Here.";
 
     return (

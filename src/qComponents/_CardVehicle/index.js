@@ -26,6 +26,7 @@ import {
 import config from "./config";
 
 export default function cardVehicle({
+    cardLink,
     imageUrl,
     title,
     transmissionType,
@@ -37,8 +38,11 @@ export default function cardVehicle({
     downPayment,
     buyNowPrice,
     bidPrice,
+    FavComponent,
 }) {
     const ImageElement = config.imageElement;
+    const AnchorElement = config.anchorElement;
+
     const classes = useStyles();
 
     const makeGridTypography = (label, i) => (
@@ -49,106 +53,116 @@ export default function cardVehicle({
 
     return (
         <Card className={classes.root}>
-            <CardActionArea className={classes.mainCardActions}>
-                <div className={classes.mediaContainer}>
-                    <ImageElement
-                        layout="responsive"
-                        width={160}
-                        height={120}
-                        sizes={`
+            {FavComponent && <FavComponent />}
+            <AnchorElement href={cardLink}>
+                <CardActionArea className={classes.mainCardActions}>
+                    <div className={classes.mediaContainer}>
+                        <ImageElement
+                            layout="responsive"
+                            width={160}
+                            height={120}
+                            sizes={`
                                 (max-width: 250px) 125px,
                                 (max-width: 350px) 175px,
                                 (max-width: 470px) 235px,
                                 (max-width: 942px) 471px,
 		                        (max-width: 1261px) 420px,
                                 211px`}
-                        src={imageUrl}
-                    />
-                </div>
-                <CardContent className={classes.cardContent}>
-                    <Typography
-                        className={classes.cardTitle}
-                        gutterBottom
-                        variant="h5"
-                        component="span"
-                    >
-                        {title}
-                    </Typography>
-                    {monthlyAmortization ? (
-                        <>
+                            src={imageUrl}
+                        />
+                    </div>
+                    <CardContent className={classes.cardContent}>
+                        <Typography
+                            className={classes.cardTitle}
+                            gutterBottom
+                            variant="h5"
+                            component="span"
+                        >
+                            {title}
+                        </Typography>
+                        {monthlyAmortization ? (
+                            <>
+                                <Typography
+                                    variant="h6"
+                                    component="span"
+                                    className={classes.price}
+                                >
+                                    {beautifyPrice(monthlyAmortization)}/ mo.
+                                </Typography>
+                                <div className={classes.installmentTerms}>
+                                    {downPayment && (
+                                        <Grid container>
+                                            {makeGridTypography("DP: ")}
+                                            {makeGridTypography(
+                                                beautifyPrice(downPayment)
+                                            )}
+                                        </Grid>
+                                    )}
+                                    {buyNowPrice && (
+                                        <Grid container>
+                                            {makeGridTypography(
+                                                "Buy Now Price: "
+                                            )}
+                                            {makeGridTypography(
+                                                beautifyPrice(buyNowPrice)
+                                            )}
+                                        </Grid>
+                                    )}
+                                    {bidPrice && (
+                                        <Grid container>
+                                            {makeGridTypography("Bid Price: ")}
+                                            {makeGridTypography(
+                                                beautifyPrice(bidPrice)
+                                            )}
+                                        </Grid>
+                                    )}
+                                </div>
+                            </>
+                        ) : (
                             <Typography
                                 variant="h6"
                                 component="span"
                                 className={classes.price}
                             >
-                                {beautifyPrice(monthlyAmortization)}/ mo.
+                                {beautifyPrice(buyNowPrice)}
                             </Typography>
-                            {downPayment && (
-                                <Grid container>
-                                    {makeGridTypography("DP: ")}
-                                    {makeGridTypography(
-                                        beautifyPrice(downPayment)
-                                    )}
-                                </Grid>
-                            )}
-                            {buyNowPrice && (
-                                <Grid container>
-                                    {makeGridTypography("Buy Now Price: ")}
-                                    {makeGridTypography(
-                                        beautifyPrice(buyNowPrice)
-                                    )}
-                                </Grid>
-                            )}
-                            {bidPrice && (
-                                <Grid container>
-                                    {makeGridTypography("Bid Price: ")}
-                                    {makeGridTypography(
-                                        beautifyPrice(bidPrice)
-                                    )}
-                                </Grid>
-                            )}
-                        </>
-                    ) : (
-                        <Typography
-                            variant="h6"
-                            component="span"
-                            className={classes.price}
-                        >
-                            {beautifyPrice(buyNowPrice)}
-                        </Typography>
-                    )}
-
-                    <Grid container className={classes.gridItems}>
-                        {[
-                            [CarShiftPatternIcon, transmissionType],
-                            [SpeedometerIcon, beautifyOdometer(odometer)],
-                            [FuelIcon, fuelType],
-                            [MapMarkerIcon, warehouseLocation],
-                        ].map(([Icon, label], i) => {
-                            const newEntry = (
-                                <>
-                                    <Icon size={12} viewBox="0 0 24 24" />
-                                    {label}
-                                </>
-                            );
-                            return makeGridTypography(newEntry, i);
-                        })}
-                    </Grid>
-                </CardContent>
-                <CardActions className={classes.cardActions}>
-                    <Typography component="span" style={{fontSize: "0.5rem"}}>
-                        {initializeClock(expiredAt)}
-                    </Typography>
-                    <div className={classes.buyNowFlag}>
-                        {buyNowPrice && (
-                            <>
-                                <FlashIcon size={12} viewBox="0 0 24 24" />
-                                <Typography>Buy Now</Typography>
-                            </>
                         )}
-                    </div>
-                </CardActions>
-            </CardActionArea>
+
+                        <Grid container className={classes.gridItems}>
+                            {[
+                                [CarShiftPatternIcon, transmissionType],
+                                [SpeedometerIcon, beautifyOdometer(odometer)],
+                                [FuelIcon, fuelType],
+                                [MapMarkerIcon, warehouseLocation],
+                            ].map(([Icon, label], i) => {
+                                const newEntry = (
+                                    <>
+                                        <Icon size={12} viewBox="0 0 24 24" />
+                                        {label}
+                                    </>
+                                );
+                                return makeGridTypography(newEntry, i);
+                            })}
+                        </Grid>
+                    </CardContent>
+                    <CardActions className={classes.cardActions}>
+                        <Typography
+                            component="span"
+                            style={{fontSize: "0.5rem"}}
+                        >
+                            {initializeClock(expiredAt)}
+                        </Typography>
+                        <div className={classes.buyNowFlag}>
+                            {buyNowPrice && (
+                                <>
+                                    <FlashIcon size={12} viewBox="0 0 24 24" />
+                                    <Typography>Buy Now</Typography>
+                                </>
+                            )}
+                        </div>
+                    </CardActions>
+                </CardActionArea>
+            </AnchorElement>
         </Card>
     );
 }

@@ -16,5 +16,23 @@ export default {
             dark: "#42743d",
             contrastText: "#fff",
         },
+        tertiary: {
+            light: "#9fd497",
+            main: "#2A2D4C",
+            dark: "#42743d",
+            contrastText: "#fff",
+        },
+        white: {
+            light: "#9fd497",
+            main: "#2A2D4C",
+            dark: "#42743d",
+            contrastText: "#fff",
+        },
+        dark: {
+            light: "#9fd497",
+            main: "#2A2D4C",
+            dark: "#42743d",
+            contrastText: "#fff",
+        },
     },
 };

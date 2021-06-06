@@ -60,7 +60,7 @@ export default makeStyles((theme) => ({
         opacity: "0.5",
     },
     advertise: {
-        background: theme.palette.secondary.main,
+        background: theme.palette.tertiary.main,
         position: "fixed",
         display: "flex",
         justifyContent: "center",
@@ -70,7 +70,7 @@ export default makeStyles((theme) => ({
         zIndex: 1,
         "& a": {
             textDecoration: "none",
-            color: theme.palette.secondary.contrastText,
+            color: theme.palette.tertiary.contrastText,
         },
     },
 }));

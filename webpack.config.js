@@ -81,9 +81,9 @@ module.exports = (env) => {
             ],
         },
         plugins: [
-            // new htmlWebpackPlugin({
-            //     template: "./development/index.html",
-            // }),
+            new htmlWebpackPlugin({
+                template: "./development/index.html",
+            }),
             // new BundleAnalyzerPlugin({analyzerMode: "static"}),
         ],
         devServer: {
