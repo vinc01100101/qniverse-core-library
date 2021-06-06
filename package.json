@@ -1,6 +1,6 @@
 {
     "name": "@qniverse/core",
-    "version": "1.0.9",
+    "version": "1.0.91",
     "description": "Core component for all QNiverse platforms.",
     "scripts": {
         "start": "webpack serve --mode development --open --hot --env mode=development",
