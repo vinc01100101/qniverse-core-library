@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
                 width: 120,
                 display: "flex",
                 alignItems: "center",
+                marginRight: 10,
             },
         },
     },

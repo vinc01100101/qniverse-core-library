@@ -10,6 +10,7 @@ import {
     ListItemText,
     Typography,
     Divider,
+    Hidden,
 } from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
 
@@ -118,9 +119,9 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                     </List>
                 </div>
             </SwipeableDrawer>
-            <AppBar style={{height: 64}}>
-                <Toolbar style={{height: 64}} className={classes.toolbar}>
-                    <div>
+            <AppBar>
+                <Toolbar className={classes.toolbar}>
+                    <div style={{flex: 1}}>
                         <IconButton
                             aria-label="Menu Button"
                             edge="start"
@@ -139,7 +140,11 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                                 className={classes.logo}
                             />
                         </AnchorElement>
-                        {SearchBar && <SearchBar />}
+                        {SearchBar && (
+                            <Hidden xsDown>
+                                <SearchBar />
+                            </Hidden>
+                        )}
                     </div>
                     <div>
                         {config.navList.map((navName, i) => {
@@ -159,8 +164,15 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                         })}
                     </div>
                 </Toolbar>
+                {SearchBar && (
+                    <Hidden smUp>
+                        <Toolbar>
+                            <SearchBar />
+                        </Toolbar>
+                    </Hidden>
+                )}
             </AppBar>
-            <Toolbar style={{height: 64}} />
+            <Toolbar />
             <div className={classes.advertise}>
                 <a href={config.advertise.link} target="_blank">
                     {config.advertise.text}
