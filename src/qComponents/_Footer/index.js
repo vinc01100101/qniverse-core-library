@@ -23,7 +23,7 @@ export default function _footer() {
         <div className={classes.root}>
             <Container maxWidth="md">
                 <div className={classes.linksSection}>
-                    <Anchor href="#">
+                    <Anchor href="/">
                         <Image
                             src={config.companyLogoSrc}
                             style={{width: 120}}

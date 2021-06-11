@@ -45,8 +45,21 @@ export default function cardVehicle({
 
     const classes = useStyles();
 
-    const makeGridTypography = (label, i) => (
-        <Grid item xs={6} component={Typography} key={i}>
+    const makeGridTypography = (
+        label,
+        i,
+        variant = "body1",
+        style = {},
+        xs = 5
+    ) => (
+        <Grid
+            item
+            xs={xs}
+            component={Typography}
+            variant={variant}
+            key={i}
+            style={style}
+        >
             {label}
         </Grid>
     );
@@ -87,34 +100,57 @@ export default function cardVehicle({
                                     component="span"
                                     className={classes.price}
                                 >
-                                    {beautifyPrice(monthlyAmortization)}/ mo.
+                                    {beautifyPrice(monthlyAmortization)}/mo.
                                 </Typography>
                                 <div className={classes.installmentTerms}>
                                     {downPayment && (
-                                        <Grid container>
-                                            {makeGridTypography("DP: ")}
-                                            {makeGridTypography(
-                                                beautifyPrice(downPayment)
-                                            )}
-                                        </Grid>
+                                        <>
+                                            <Grid container>
+                                                {makeGridTypography("DP: ")}
+                                                {makeGridTypography(
+                                                    beautifyPrice(downPayment),
+                                                    undefined,
+                                                    undefined,
+                                                    {
+                                                        whiteSpace: "nowrap",
+                                                    }
+                                                )}
+                                            </Grid>
+                                        </>
                                     )}
                                     {buyNowPrice && (
-                                        <Grid container>
-                                            {makeGridTypography(
-                                                "Buy Now Price: "
-                                            )}
-                                            {makeGridTypography(
-                                                beautifyPrice(buyNowPrice)
-                                            )}
-                                        </Grid>
+                                        <>
+                                            <Grid container>
+                                                {makeGridTypography(
+                                                    "Buy Now Price: "
+                                                )}
+                                                {makeGridTypography(
+                                                    beautifyPrice(buyNowPrice),
+                                                    undefined,
+                                                    undefined,
+                                                    {
+                                                        whiteSpace: "nowrap",
+                                                    }
+                                                )}
+                                            </Grid>
+                                        </>
                                     )}
                                     {bidPrice && (
-                                        <Grid container>
-                                            {makeGridTypography("Bid Price: ")}
-                                            {makeGridTypography(
-                                                beautifyPrice(bidPrice)
-                                            )}
-                                        </Grid>
+                                        <>
+                                            <Grid container>
+                                                {makeGridTypography(
+                                                    "Bid Price: "
+                                                )}
+                                                {makeGridTypography(
+                                                    beautifyPrice(bidPrice),
+                                                    undefined,
+                                                    undefined,
+                                                    {
+                                                        whiteSpace: "nowrap",
+                                                    }
+                                                )}
+                                            </Grid>
+                                        </>
                                     )}
                                 </div>
                             </>
@@ -141,22 +177,28 @@ export default function cardVehicle({
                                         {label}
                                     </>
                                 );
-                                return makeGridTypography(newEntry, i);
+                                const xs = i % 2 == 0 ? 5 : 7;
+                                return makeGridTypography(
+                                    newEntry,
+                                    i,
+                                    "body2",
+                                    undefined,
+                                    xs
+                                );
                             })}
                         </Grid>
                     </CardContent>
                     <CardActions className={classes.cardActions}>
-                        <Typography
-                            component="span"
-                            style={{fontSize: "0.5rem"}}
-                        >
+                        <Typography component="span">
                             {initializeClock(expiredAt)}
                         </Typography>
                         <div className={classes.buyNowFlag}>
                             {buyNowPrice && (
                                 <>
                                     <FlashIcon size={12} viewBox="0 0 24 24" />
-                                    <Typography>Buy Now</Typography>
+                                    <Typography variant="body2">
+                                        Buy Now
+                                    </Typography>
                                 </>
                             )}
                         </div>

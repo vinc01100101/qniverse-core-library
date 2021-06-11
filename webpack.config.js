@@ -15,7 +15,7 @@ module.exports = (env) => {
             _CardVehicle: "./src/qComponents/_CardVehicle/index.js",
             _Footer: "./src/qComponents/_Footer/index.js",
             _NavBarWithDrawer: "./src/qComponents/_NavBarWithDrawer/index.js",
-            _QWrapper: "./src/qComponents/_QWrapper/index.js",
+            _Wrapper: "./src/qComponents/_Wrapper/index.js",
             automart: "./src/themes/automart.js",
             motomart: "./src/themes/motomart.js",
             sellMyCar: "./src/themes/sellMyCar.js",

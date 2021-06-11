@@ -38,7 +38,7 @@ npm i @qniverse/core
 **QComponent** names are prefixed with "\_" to make it easier to distinguish between the other components like **React** and **Material-UI**:
 
 ```javascript
-import {_QWrapper, _NavBarWithDrawer, _CardVehicle} from "@qniverse/core";
+import {_Wrapper, _NavBarWithDrawer, _CardVehicle} from "@qniverse/core";
 ```
 
 All [Material-UI components](https://material-ui.com/getting-started/usage/) are available directly from the library:
@@ -56,25 +56,25 @@ import {ThemeProvider, createMuiTheme} from "@qniverse/core";
 Current versions are only compatible with the [NextJS](https://nextjs.org/) framework.
 (We will remove this dependency in the future.)
 
-Inside the `_QWrapper` module are the [CssBaseLine](https://material-ui.com/components/css-baseline/) and [ThemeProvider](https://material-ui.com/styles/api/#themeprovider) which sets the app automatically. Just pass the config in the `_QWrapper` and use it to wrap the app components.
+Inside the `_Wrapper` module are the [CssBaseLine](https://material-ui.com/components/css-baseline/) and [ThemeProvider](https://material-ui.com/styles/api/#themeprovider) which sets the app automatically. Just pass the config in the `_Wrapper` and use it to wrap the app components.
 
 In the `_app.js`,
 
 ```javascript
-import {_NavBarWithDrawer, _QWrapper, motomart} from "@qniverse/core";
+import {_NavBarWithDrawer, _Wrapper, motomart} from "@qniverse/core";
 
 function MyApp({Component, pageProps}) {
     const config = {
         theme: motomart,
     };
     return (
-        <_QWrapper config={config}>
+        <_Wrapper config={config}>
             <_NavBarWithDrawer
                 logoSrc="/Automart_Logo.svg"
                 drawerContent={"hi from Drawer"}
             />
             <Component {...pageProps} />
-        </_QWrapper>
+        </_Wrapper>
     );
 }
 
@@ -98,7 +98,7 @@ Current available themes:
 
 | QComponent         | Data Props                                                                                                              |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| \_QWrapper         | ({theme: [themeModule]})                                                                                                |
+| \_Wrapper          | ({theme: [themeModule]})                                                                                                |
 | \_CardVehicle      | (imageUrl, title, price, transmissionType, odometer, fuelType, warehouseLocation, expiredAt, buyNowPrice, isNextImage,) |
 | \_NavBarWithDrawer | (logoSrc, drawerContent)                                                                                                |
 

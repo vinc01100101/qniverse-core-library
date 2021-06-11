@@ -2,10 +2,10 @@ require("@babel/polyfill");
 import React from "react";
 import ReactDOM from "react-dom";
 
-import _QWrapper from "../src/qComponents/_QWrapper";
+import _Wrapper from "../src/qComponents/_Wrapper";
 import _NavBarWithDrawer from "../src/qComponents/_NavBarWithDrawer";
 import _Footer from "../src/qComponents/_Footer";
-import automart from "../src/themes/automart";
+import motomart from "../src/themes/motomart";
 import config from "../src/utils/config";
 import {Button} from "@material-ui/core";
 
@@ -17,7 +17,7 @@ import CardGrid from "./devSrc/CardGrid";
 function App() {
     //IIFE (Immediately Invoked Function Expression)
     (() => {
-        config.theme = automart;
+        config.theme = motomart;
         config.companyLogoSrc = "dist/assets/Automart_Logo.svg";
         config.links = {
             ...config.links,
@@ -64,7 +64,7 @@ function App() {
                 rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
             />
-            <_QWrapper>
+            <_Wrapper>
                 <_NavBarWithDrawer drawerContent={drawerContent} />
 
                 <h1>Hello From REACT</h1>
@@ -83,7 +83,7 @@ function App() {
                 <br />
                 <CardGrid />
                 <_Footer />
-            </_QWrapper>
+            </_Wrapper>
         </>
     );
 }

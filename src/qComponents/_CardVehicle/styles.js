@@ -50,12 +50,15 @@ export default makeStyles((theme) => ({
             fontSize: "0.8rem",
             color: "#707070",
         },
+        "& .MuiDivider-vertical": {
+            margin: "0px 3px",
+        },
     },
     gridItems: {
         lineHeight: 2,
         "& > p": {
             color: "#707070",
-            fontSize: "0.6rem",
+            fontSize: "0.7rem",
             [theme.breakpoints.up("md")]: {
                 fontSize: "11px",
             },
@@ -72,6 +75,9 @@ export default makeStyles((theme) => ({
         position: "relative",
         bottom: "0px",
         width: "100%",
+        "& > span": {
+            fontSize: "0.5rem",
+        },
     },
 
     buyNowFlag: {
@@ -79,5 +85,8 @@ export default makeStyles((theme) => ({
         color: theme.palette.primary.main,
         fontSize: 12,
         alignItems: "center",
+        "& > p": {
+            color: "#fabd09",
+        },
     },
 }));

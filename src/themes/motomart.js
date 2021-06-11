@@ -70,14 +70,14 @@ export default {
             fontFamily: "Courier Prime",
             fontSize: "1.25rem",
             fontWeight: 400,
-            color: "#fabd09",
+            color: "#242424",
             lineHeight: "1.6",
         },
         h6: {
             fontFamily: "Courier Prime",
             fontSize: "1.25rem",
             fontWeight: 400,
-            color: "#707070",
+            color: "#242424",
             lineHeight: "1.6",
         },
         body1: {

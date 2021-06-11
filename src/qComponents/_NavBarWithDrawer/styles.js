@@ -7,22 +7,39 @@ export default makeStyles((theme) => ({
         "& > div": {
             display: "flex",
             "& > .appbar-logo-container": {
+                minWidth: 120,
                 width: 120,
                 display: "flex",
                 alignItems: "center",
                 marginRight: 10,
+                [theme.breakpoints.up("xs")]: {
+                    marginLeft: 30,
+                },
+            },
+        },
+        "& > .first-div-in-toolbar": {
+            flex: 1,
+            [theme.breakpoints.down("xs")]: {
+                display: "flex",
+                justifyContent: "center",
             },
         },
     },
+    menuIcon: {
+        position: "absolute",
+        left: 20,
+        top: 7,
+        width: 50,
+        height: 50,
+    },
     navLinks: {
+        width: 50,
+        height: 50,
         "& > .MuiIconButton-label": {
             color: theme.palette.primary.contrastText,
-            fontSize: 15,
-            [theme.breakpoints.down("sm")]: {
-                display: "flex",
-                flexDirection: "column",
-                fontSize: 8,
-            },
+            display: "flex",
+            flexDirection: "column",
+            fontSize: 8,
         },
     },
     drawerContainer: {

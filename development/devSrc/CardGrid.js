@@ -19,16 +19,16 @@ export default function CardGrid() {
 
     return (
         <Grid container>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} md={3}>
                 <_CardVehicle {...e} monthlyAmortization="100000" />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} md={3}>
                 <_CardVehicle {...e} title="2018 Yamaha 125" />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} md={3}>
                 <_CardVehicle {...e} />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} md={3}>
                 <_CardVehicle {...e} />
             </Grid>
         </Grid>

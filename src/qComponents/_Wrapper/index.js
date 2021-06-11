@@ -5,7 +5,7 @@ import {CssBaseline} from "@material-ui/core";
 import config from "./config";
 //svg sprite
 import SvgSprite from "../../svgStore/sprite";
-export default function qWrapper({children}) {
+export default function wrapper({children}) {
     const muiTheme = createMuiTheme(config.theme);
     return (
         <>

@@ -37,6 +37,18 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
     const toggleDrawer = (isOpen) => (event) => {
         setDrawerState(isOpen);
     };
+
+    const MenuIcon = () => (
+        <IconButton
+            className={classes.menuIcon}
+            aria-label="Menu Button"
+            edge="start"
+            color="inherit"
+            onClick={toggleDrawer(true)}
+        >
+            <Menu />
+        </IconButton>
+    );
     return (
         <div>
             <SwipeableDrawer
@@ -121,15 +133,15 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
             </SwipeableDrawer>
             <AppBar>
                 <Toolbar className={classes.toolbar}>
-                    <div style={{flex: 1}}>
-                        <IconButton
-                            aria-label="Menu Button"
-                            edge="start"
-                            color="inherit"
-                            onClick={toggleDrawer(true)}
-                        >
-                            <Menu />
-                        </IconButton>
+                    <div className="first-div-in-toolbar">
+                        {SearchBar ? (
+                            <Hidden xsDown>
+                                <MenuIcon />
+                            </Hidden>
+                        ) : (
+                            <MenuIcon />
+                        )}
+
                         <AnchorElement
                             aria-label="Home"
                             href="/"
@@ -147,38 +159,42 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                         )}
                     </div>
                     <div>
-                        {config.navList.map((navName, i) => {
-                            const NavIcon = config.navIcons[i];
-                            return (
-                                <IconButton
-                                    key={i}
-                                    href={config.links[navName][0]}
-                                    target="_blank"
-                                    aria-label={navName}
-                                    className={classes.navLinks}
-                                >
-                                    <NavIcon />
-                                    {navName}
-                                </IconButton>
-                            );
-                        })}
+                        <Hidden xsDown>
+                            {config.navList.map((navName, i) => {
+                                const NavIcon = config.navIcons[i];
+                                return (
+                                    <IconButton
+                                        key={i}
+                                        href={config.links[navName][0]}
+                                        target="_blank"
+                                        aria-label={navName}
+                                        className={classes.navLinks}
+                                    >
+                                        <NavIcon />
+                                        {navName}
+                                    </IconButton>
+                                );
+                            })}
+                        </Hidden>
                     </div>
                 </Toolbar>
                 {SearchBar && (
                     <Hidden smUp>
                         <Toolbar>
+                            <MenuIcon />
+                            <div style={{width: 50}} />
                             <SearchBar />
                         </Toolbar>
                     </Hidden>
                 )}
             </AppBar>
             <Toolbar />
-            <div className={classes.advertise}>
+            {/* <div className={classes.advertise}>
                 <a href={config.advertise.link} target="_blank">
                     {config.advertise.text}
                 </a>
             </div>
-            <Toolbar />
+            <Toolbar /> */}
         </div>
     );
 }
