@@ -49,6 +49,22 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
             <Menu />
         </IconButton>
     );
+
+    const navList = config.navList.map((navName, i) => {
+        const NavIcon = config.navIcons[i];
+        return (
+            <IconButton
+                key={i}
+                href={config.links[navName][0]}
+                target="_blank"
+                aria-label={navName}
+                className={classes.navLinks}
+            >
+                <NavIcon />
+                {navName}
+            </IconButton>
+        );
+    });
     return (
         <div>
             <SwipeableDrawer
@@ -123,7 +139,7 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                         </ListItem>
                         <ListItem>
                             <Typography className={classes.copyRight}>
-                                © Copyright 2020, Automart.PH
+                                {config.copyrightText}
                                 <br />
                                 All rights reserved
                             </Typography>
@@ -132,10 +148,14 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                 </div>
             </SwipeableDrawer>
             <AppBar>
-                <Toolbar className={classes.toolbar}>
-                    <div className="first-div-in-toolbar">
+                <Toolbar className={classes.toolbar} disableGutters>
+                    <div
+                        className={`first-div-in-toolbar${
+                            SearchBar ? " has-searchbar" : ""
+                        }`}
+                    >
                         {SearchBar ? (
-                            <Hidden xsDown>
+                            <Hidden smDown>
                                 <MenuIcon />
                             </Hidden>
                         ) : (
@@ -153,29 +173,17 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                             />
                         </AnchorElement>
                         {SearchBar && (
-                            <Hidden xsDown>
+                            <Hidden smDown>
                                 <SearchBar />
                             </Hidden>
                         )}
                     </div>
                     <div>
-                        <Hidden xsDown>
-                            {config.navList.map((navName, i) => {
-                                const NavIcon = config.navIcons[i];
-                                return (
-                                    <IconButton
-                                        key={i}
-                                        href={config.links[navName][0]}
-                                        target="_blank"
-                                        aria-label={navName}
-                                        className={classes.navLinks}
-                                    >
-                                        <NavIcon />
-                                        {navName}
-                                    </IconButton>
-                                );
-                            })}
-                        </Hidden>
+                        {SearchBar ? (
+                            <Hidden smDown>{navList}</Hidden>
+                        ) : (
+                            navList
+                        )}
                     </div>
                 </Toolbar>
                 {SearchBar && (
@@ -188,7 +196,7 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                     </Hidden>
                 )}
             </AppBar>
-            <Toolbar />
+            <Toolbar className={classes.toolbar} disableGutters />
             {/* <div className={classes.advertise}>
                 <a href={config.advertise.link} target="_blank">
                     {config.advertise.text}

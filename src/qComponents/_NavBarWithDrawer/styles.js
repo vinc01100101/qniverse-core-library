@@ -4,6 +4,7 @@ export default makeStyles((theme) => ({
     toolbar: {
         display: "flex",
         justifyContent: "space-between",
+        minHeight: 64,
         "& > div": {
             display: "flex",
             "& > .appbar-logo-container": {
@@ -12,14 +13,15 @@ export default makeStyles((theme) => ({
                 display: "flex",
                 alignItems: "center",
                 marginRight: 10,
-                [theme.breakpoints.up("xs")]: {
-                    marginLeft: 30,
-                },
+                marginLeft: 60,
             },
         },
         "& > .first-div-in-toolbar": {
             flex: 1,
-            [theme.breakpoints.down("xs")]: {
+        },
+
+        "& > .has-searchbar": {
+            [theme.breakpoints.down("sm")]: {
                 display: "flex",
                 justifyContent: "center",
             },

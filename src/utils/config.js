@@ -20,6 +20,7 @@ const defaults = {
     advertise: {},
     anchorElement: "Not Set",
     imageElement: "Not Set",
+    copyrightText: "© Copyright 2020, Automart.PH",
 };
 export default {
     ...defaults,

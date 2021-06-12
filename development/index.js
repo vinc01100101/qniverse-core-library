@@ -65,7 +65,10 @@ function App() {
                 href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
             />
             <_Wrapper>
-                <_NavBarWithDrawer drawerContent={drawerContent} />
+                <_NavBarWithDrawer
+                    drawerContent={drawerContent}
+                    // SearchBar={() => <h1>SEARCH BAR</h1>}
+                />
 
                 <h1>Hello From REACT</h1>
                 <Button color="primary">Sample Button 1</Button>

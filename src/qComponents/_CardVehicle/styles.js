@@ -39,7 +39,7 @@ export default makeStyles((theme) => ({
         overflow: "hidden",
         lineHeight: "1.6rem",
     },
-    price: {color: "rgb(250, 189, 9)"},
+    price: {color: "rgb(250, 189, 9) !important"},
     image: {
         "& > div": {
             paddingBottom: "75% !important",

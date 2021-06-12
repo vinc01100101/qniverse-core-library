@@ -1,6 +1,6 @@
 import React from "react";
 
-import {IconButton, Container, Typography, Button} from "@material-ui/core";
+import {IconButton, Container, Typography} from "@material-ui/core";
 //styles
 import useStyles from "./styles";
 //package config
@@ -61,6 +61,11 @@ export default function _footer() {
                             </IconButton>
                         ))}
                     </div>
+                    <Typography align="center">
+                        {config.copyrightText}
+                        <br />
+                        All rights reserved
+                    </Typography>
                 </div>
             </Container>
         </div>
