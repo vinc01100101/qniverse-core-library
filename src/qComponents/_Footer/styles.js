@@ -15,6 +15,9 @@ export default makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        "& > hr": {
+            width: "100%",
+        },
     },
     linkTexts: {
         display: "flex",
@@ -22,7 +25,13 @@ export default makeStyles((theme) => ({
         justifyContent: "space-evenly",
         flexWrap: "wrap",
         "& > a": {
-            margin: 20,
+            margin: "5px 20px",
+            "& > p": {
+                // fontSize: "1rem",
+            },
+        },
+        [theme.breakpoints.down("sm")]: {
+            flexDirection: "column",
         },
     },
 }));

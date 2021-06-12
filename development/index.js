@@ -67,7 +67,7 @@ function App() {
             <_Wrapper>
                 <_NavBarWithDrawer
                     drawerContent={drawerContent}
-                    // SearchBar={() => <h1>SEARCH BAR</h1>}
+                    // SearchBar={() => <h4>SEARCH BAR</h4>}
                 />
 
                 <h1>Hello From REACT</h1>

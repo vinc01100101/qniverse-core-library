@@ -89,7 +89,7 @@ export default {
         },
         body2: {
             fontFamily: "tahoma",
-            fontSize: "0.894rem",
+            fontSize: "1rem",
             fontWeight: 400,
             color: "#242424",
             lineHeight: "1.6",

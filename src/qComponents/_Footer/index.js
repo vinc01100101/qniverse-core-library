@@ -1,6 +1,6 @@
 import React from "react";
 
-import {IconButton, Container, Typography} from "@material-ui/core";
+import {IconButton, Container, Typography, Divider} from "@material-ui/core";
 //styles
 import useStyles from "./styles";
 //package config
@@ -44,7 +44,9 @@ export default function _footer() {
                                             : "_self"
                                     }
                                 >
-                                    <Typography>{item}</Typography>
+                                    <Typography variant="body2" align="center">
+                                        {item}
+                                    </Typography>
                                 </Anchor>
                             );
                         })}
@@ -61,7 +63,8 @@ export default function _footer() {
                             </IconButton>
                         ))}
                     </div>
-                    <Typography align="center">
+                    <Divider />
+                    <Typography align="center" variant="body2">
                         {config.copyrightText}
                         <br />
                         All rights reserved

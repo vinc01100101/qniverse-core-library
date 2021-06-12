@@ -116,7 +116,7 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                                         <ListItemText
                                             primary={item}
                                             primaryTypographyProps={{
-                                                variant: "body1",
+                                                variant: "body2",
                                             }}
                                         />
                                     </ListItem>
@@ -138,7 +138,10 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                             ))}
                         </ListItem>
                         <ListItem>
-                            <Typography className={classes.copyRight}>
+                            <Typography
+                                variant="body2"
+                                className={classes.copyRight}
+                            >
                                 {config.copyrightText}
                                 <br />
                                 All rights reserved
@@ -165,7 +168,9 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                         <AnchorElement
                             aria-label="Home"
                             href="/"
-                            className="appbar-logo-container"
+                            className={`appbar-logo-container${
+                                SearchBar ? " has-searchbar-img" : ""
+                            }`}
                         >
                             <img
                                 src={config.companyLogoSrc}

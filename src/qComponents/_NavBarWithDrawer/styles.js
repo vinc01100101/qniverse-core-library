@@ -18,6 +18,11 @@ export default makeStyles((theme) => ({
         },
         "& > .first-div-in-toolbar": {
             flex: 1,
+            "& > .has-searchbar-img": {
+                [theme.breakpoints.down("sm")]: {
+                    margin: 0,
+                },
+            },
         },
 
         "& > .has-searchbar": {
