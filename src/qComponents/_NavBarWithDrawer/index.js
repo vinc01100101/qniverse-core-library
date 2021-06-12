@@ -151,7 +151,12 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                 </div>
             </SwipeableDrawer>
             <AppBar>
-                <Toolbar className={classes.toolbar} disableGutters>
+                <Toolbar
+                    className={`${classes.toolbar} ${
+                        SearchBar ? classes.hasSearchbarToolbar : ""
+                    }`}
+                    disableGutters
+                >
                     <div
                         className={`first-div-in-toolbar${
                             SearchBar ? " has-searchbar" : ""

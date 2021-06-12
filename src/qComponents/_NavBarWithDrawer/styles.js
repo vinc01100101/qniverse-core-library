@@ -2,9 +2,9 @@ import {makeStyles} from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
     toolbar: {
+        minHeight: 64,
         display: "flex",
         justifyContent: "space-between",
-        minHeight: 64,
         "& > div": {
             display: "flex",
             "& > .appbar-logo-container": {
@@ -30,6 +30,12 @@ export default makeStyles((theme) => ({
                 display: "flex",
                 justifyContent: "center",
             },
+        },
+    },
+    hasSearchbarToolbar: {
+        minHeight: 64,
+        [theme.breakpoints.down("sm")]: {
+            minHeight: 45,
         },
     },
     menuIcon: {
@@ -73,8 +79,14 @@ export default makeStyles((theme) => ({
     },
 
     logoContainer: {
+        height: 54,
         width: "100%",
         background: theme.palette.primary.main,
+        justifyContent: "center",
+        "& > a": {
+            display: "flex",
+            width: 150,
+        },
     },
     copyRight: {
         color: theme.palette.primary.contrastText,
