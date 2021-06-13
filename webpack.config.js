@@ -87,7 +87,7 @@ module.exports = (env) => {
             // new BundleAnalyzerPlugin({analyzerMode: "static"}),
         ],
         devServer: {
-            port: 3000,
+            port: 4000,
         },
         externals: ext,
         resolve: {

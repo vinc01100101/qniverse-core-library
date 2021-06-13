@@ -63,10 +63,16 @@ export default makeStyles((theme) => ({
         background: "white",
         width: "300px",
         padding: "20px",
+        background: theme.palette.primary.main,
     },
     listItemText: {
         textDecoration: "none",
         color: "black",
+        "& span": {
+            fontWeight: 500,
+            fontSize: "1.25rem",
+            color: theme.palette.primary.contrastText,
+        },
     },
     footerList: {
         background: theme.palette.primary.main,
