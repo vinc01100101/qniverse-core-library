@@ -56,7 +56,7 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
             <IconButton
                 key={i}
                 href={config.links[navName][0]}
-                target="_blank"
+                target={config.links[navName][1] ? "_blank" : "_self"}
                 aria-label={navName}
                 className={classes.navLinks}
             >
@@ -84,10 +84,7 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                             onClick={toggleDrawer(false)}
                         >
                             <AnchorElement href="/">
-                                <img
-                                    src={config.companyLogoSrc}
-                                    className={classes.logo}
-                                />
+                                {config.companyLogoSvg}
                             </AnchorElement>
                         </ListItem>
 
@@ -177,10 +174,7 @@ export default function navBarWithDrawer({drawerContent, SearchBar}) {
                                 SearchBar ? " has-searchbar-img" : ""
                             }`}
                         >
-                            <img
-                                src={config.companyLogoSrc}
-                                className={classes.logo}
-                            />
+                            {config.companyLogoSvg}
                         </AnchorElement>
                         {SearchBar && (
                             <Hidden smDown>

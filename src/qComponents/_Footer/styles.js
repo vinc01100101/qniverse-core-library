@@ -5,10 +5,15 @@ export default makeStyles((theme) => ({
         width: "100%",
         padding: 40,
         background: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
         "& a": {
             textDecoration: "none",
-            color: theme.palette.primary.contrastText,
+            color: "inherit",
         },
+    },
+    divider: {
+        margin: "30px 0px",
+        background: theme.palette.primary.contrastText,
     },
     linksSection: {
         width: "100%",

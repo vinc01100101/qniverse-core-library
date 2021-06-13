@@ -8,7 +8,7 @@ import config from "./config";
 //svg's
 import {facebook, instagram, linkedIn, youtube} from "../../svgStore/svgCall";
 
-export default function _footer() {
+export default function _footer({PartnersAndAffiliates}) {
     const classes = useStyles();
     const Image = config.imageElement;
     const Anchor = config.anchorElement;
@@ -23,15 +23,7 @@ export default function _footer() {
         <div className={classes.root}>
             <Container maxWidth="md">
                 <div className={classes.linksSection}>
-                    <Anchor href="/">
-                        <Image
-                            src={config.companyLogoSrc}
-                            style={{width: 120}}
-                            width={120}
-                            height={30}
-                            layout="fixed"
-                        />
-                    </Anchor>
+                    <Anchor href="/">{config.companyLogoSvg}</Anchor>
                     <div className={classes.linkTexts}>
                         {config.footerList.map((item, i) => {
                             return (
@@ -63,7 +55,13 @@ export default function _footer() {
                             </IconButton>
                         ))}
                     </div>
-                    <Divider />
+                    <Divider className={classes.divider} />
+                    {PartnersAndAffiliates && (
+                        <>
+                            <PartnersAndAffiliates />
+                            <Divider className={classes.divider} />
+                        </>
+                    )}
                     <Typography align="center" variant="body2">
                         {config.copyrightText}
                         <br />

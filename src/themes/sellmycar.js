@@ -1,7 +1,42 @@
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-const breakpoints = createBreakpoints({});
+import {createMuiTheme} from "@material-ui/core/styles";
+
+const defaultTheme = createMuiTheme();
 
 export default {
+    components: {
+        // Style sheet name ⚛️
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    whiteSpace: "normal",
+                },
+            },
+        },
+        MuiSelect: {
+            styleOverrides: {
+                selectMenu: {
+                    whiteSpace: "pre-wrap",
+                },
+            },
+        },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    boxShadow: "none !important",
+                    "&::before": {
+                        top: 0,
+                    },
+                },
+            },
+        },
+        MuiCollapse: {
+            styleOverrides: {
+                root: {
+                    boxShadow: `0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);`,
+                },
+            },
+        },
+    },
     palette: {
         primary: {
             light: "#7eb875",
@@ -36,62 +71,17 @@ export default {
         },
     },
     typography: {
-        fontFamily: ["Ubuntu"],
-        h1: {
-            fontFamily: "Ubuntu",
-            fontSize: "2.25rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "2",
-        },
-        h2: {
-            fontFamily: "Ubuntu",
-            fontSize: "1.5rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.5",
-        },
-        h3: {
-            fontFamily: "Ubuntu",
-            fontSize: "1.25rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.5",
-        },
-        h4: {
-            fontFamily: "Ubuntu",
-            fontSize: "1.25rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.5",
+        fontFamily: `'Source Sans Pro', sans-serif`,
+        body1: {
+            fontSize: "16px",
+            [defaultTheme.breakpoints.up("md")]: {
+                fontSize: "18px",
+            },
         },
         h5: {
-            fontFamily: "Ubuntu",
-            fontSize: "1.25rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.6",
-        },
-        h6: {
-            fontFamily: "Ubuntu",
-            fontSize: "1.25rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.6",
-        },
-        body1: {
-            fontFamily: "Ubuntu",
-            fontSize: "1rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.6",
-        },
-        body2: {
-            fontFamily: "tahoma",
-            fontSize: "0.894rem",
-            fontWeight: 400,
-            color: "#242424",
-            lineHeight: "1.6",
+            [defaultTheme.breakpoints.up("md")]: {
+                fontWeight: "bold",
+            },
         },
     },
 };
