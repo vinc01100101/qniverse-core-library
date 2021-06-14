@@ -23,6 +23,9 @@ export default makeStyles((theme) => ({
         "& > hr": {
             width: "100%",
         },
+        "& p": {
+            color: theme.palette.primary.contrastText,
+        },
     },
     linkTexts: {
         display: "flex",
@@ -31,9 +34,6 @@ export default makeStyles((theme) => ({
         flexWrap: "wrap",
         "& > a": {
             margin: "5px 20px",
-            "& > p": {
-                // fontSize: "1rem",
-            },
         },
         [theme.breakpoints.down("sm")]: {
             flexDirection: "column",
