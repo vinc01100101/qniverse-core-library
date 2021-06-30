@@ -19,6 +19,7 @@ module.exports = (env) => {
             automart: "./src/themes/automart.js",
             motomart: "./src/themes/motomart.js",
             sellMyCar: "./src/themes/sellMyCar.js",
+            assurance: "./src/themes/assurance.js",
             // config: "./src/utils/config.js",
         };
         ext = {

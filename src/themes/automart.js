@@ -19,6 +19,13 @@ export default {
             dark: "#84a7cd",
             contrastText: "#000",
         },
+        buyNowIcon: {
+            light: "#b2661e",
+            main: "#ff932c",
+            dark: "#ffa856",
+            contrastText: "#fff",
+            background: "rgba(255,147,44,.6)",
+        },
         white: {
             light: "#af8406",
             main: "#ffffff",

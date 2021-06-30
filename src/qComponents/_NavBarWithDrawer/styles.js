@@ -8,8 +8,8 @@ export default makeStyles((theme) => ({
         "& > div": {
             display: "flex",
             "& > .appbar-logo-container": {
-                minWidth: 120,
-                width: 120,
+                minWidth: 150,
+                width: 150,
                 display: "flex",
                 alignItems: "center",
                 marginRight: 10,

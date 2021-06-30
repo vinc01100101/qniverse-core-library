@@ -12,9 +12,7 @@ export default function wrapper({children}) {
             {/* this svg sprite is hidden, images are called in src/svgStore/svgCall.js */}
             <SvgSprite />
             <CssBaseline />
-            <ThemeProvider theme={muiTheme}>
-                <main>{children}</main>
-            </ThemeProvider>
+            <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>
         </>
     );
 }

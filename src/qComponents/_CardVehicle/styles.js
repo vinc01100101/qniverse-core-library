@@ -39,7 +39,7 @@ export default makeStyles((theme) => ({
         overflow: "hidden",
         lineHeight: "1.6rem",
     },
-    price: {color: "rgb(250, 189, 9) !important"},
+    price: {color: theme.palette.buyNowIcon.main},
     image: {
         "& > div": {
             paddingBottom: "75% !important",
@@ -82,11 +82,13 @@ export default makeStyles((theme) => ({
 
     buyNowFlag: {
         display: "flex",
-        color: theme.palette.primary.main,
+        flexDirection: "column",
+        color: theme.palette.buyNowIcon.main,
         fontSize: 12,
         alignItems: "center",
         "& > p": {
-            color: "#fabd09",
+            fontSize: 8,
+            color: "inherit",
         },
     },
 }));
