@@ -23,9 +23,7 @@ export default function _footer({PartnersAndAffiliates}) {
         <div className={classes.root}>
             <Container maxWidth="md">
                 <div className={classes.linksSection}>
-                    <Anchor style={{width: 170}} href="/">
-                        {config.companyLogoSvg}
-                    </Anchor>
+                    <Anchor href="/">{config.companyLogoSvg}</Anchor>
                     <div className={classes.linkTexts}>
                         {config.footerList.map((item, i) => {
                             return (

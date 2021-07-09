@@ -26,6 +26,14 @@ export default makeStyles((theme) => ({
         "& p": {
             color: theme.palette.primary.contrastText,
         },
+        "& > a": {
+            minWidth: 150,
+            width: 150,
+            [theme.breakpoints.up("sm")]: {
+                minWidth: 240,
+                width: 240,
+            },
+        },
     },
     linkTexts: {
         display: "flex",

@@ -8,12 +8,16 @@ export default makeStyles((theme) => ({
         "& > div": {
             display: "flex",
             "& > .appbar-logo-container": {
-                minWidth: 150,
-                width: 150,
                 display: "flex",
                 alignItems: "center",
                 marginRight: 10,
                 marginLeft: 60,
+                minWidth: 150,
+                width: 150,
+                [theme.breakpoints.up("sm")]: {
+                    minWidth: 240,
+                    width: 240,
+                },
             },
         },
         "& > .first-div-in-toolbar": {
@@ -91,7 +95,12 @@ export default makeStyles((theme) => ({
         justifyContent: "center",
         "& > a": {
             display: "flex",
+            minWidth: 150,
             width: 150,
+            [theme.breakpoints.up("sm")]: {
+                minWidth: 240,
+                width: 240,
+            },
         },
     },
     copyRight: {
