@@ -13,6 +13,7 @@ module.exports = (env) => {
         // entry = "./index.js";
         entry = {
             _CardVehicle: "./src/qComponents/_CardVehicle/index.js",
+            _Dialog: "./src/qComponents/_Dialog/index.js",
             _Footer: "./src/qComponents/_Footer/index.js",
             _NavBarWithDrawer: "./src/qComponents/_NavBarWithDrawer/index.js",
             _Wrapper: "./src/qComponents/_Wrapper/index.js",
